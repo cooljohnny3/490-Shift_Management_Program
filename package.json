@@ -1,22 +1,20 @@
 {
-  "name": "490-shift_management_program",
-  "version": "1.0.0",
-  "description": "A scheduler for any type of work environment to assist employees and employers make changes to shift schedules.",
-  "main": "src/index.js",
+  "name": "vue-learning",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cooljohnny3/490-Shift_Management_Program.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cooljohnny3/490-Shift_Management_Program/issues"
-  },
-  "homepage": "https://github.com/cooljohnny3/490-Shift_Management_Program#readme",
   "dependencies": {
-    "nodemon": "^1.18.4"
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.4",
+    "@vue/cli-plugin-eslint": "^3.0.4",
+    "@vue/cli-service": "^3.0.4",
+    "vue-template-compiler": "^2.5.17"
   }
 }

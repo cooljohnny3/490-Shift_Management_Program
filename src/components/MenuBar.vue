@@ -9,7 +9,10 @@
     <router-link to="/settings" class="menu-item">
       <i class='fa fa-cogs fa-3x'/>
     </router-link>
-    <router-link to="/logout" class="menu-item">
+    <router-link v-if="manager" to="/manager-settings" class="menu-item">
+      <i class='fa fa-wrench fa-3x'/>
+    </router-link>
+    <router-link to="/login" class="menu-item">
       <i class='fa fa-power-off fa-3x'/>
     </router-link>
   </div>
@@ -18,20 +21,31 @@
 <script>
 export default {
   name: 'MenuBar',
+  data() {
+    return {
+      manager: false
+    }
+  }
 }
 </script>
 
 <style>
-  .menu-item {
-    display: block;
-    background-color: #59B9FF;
-    margin-top: 1px;
-    padding: 30px 8px;
-    color:black;
-  }
+.menu {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #59B9FF;
+}
 
-  .menu-item:hover {
-    background-color: #D4EDFF;
-    cursor: pointer;
-  }
+.menu-item {
+  display: block;
+  padding: 30px 8px;
+  color:black;
+}
+
+.menu-item:hover {
+  background-color: #D4EDFF;
+  cursor: pointer;
+}
 </style>

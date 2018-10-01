@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div class="manager-settings">
     <MenuBar/>
-    <h1>Home</h1>
+    <h1>Manager Settings</h1>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 import MenuBar from '@/components/MenuBar'
 
 export default {
-  name: 'Home',
+  name: 'ManagerSettings',
   components: {
     MenuBar
   }

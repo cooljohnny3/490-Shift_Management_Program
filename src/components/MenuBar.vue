@@ -23,7 +23,8 @@ export default {
   name: 'MenuBar',
   data() {
     return {
-      manager: false
+      manager: false 
+      //toggles manager options in menubar
     }
   }
 }

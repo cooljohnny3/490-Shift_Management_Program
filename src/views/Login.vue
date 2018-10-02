@@ -4,18 +4,18 @@
 			<h1>
 				SKEJ
 			</h1>
-				
-			<form method="Post">
-				<div>
-					<input v-model="username" type="text" placeholder = "Username">
-				</div>
-				<div>
+				<div class="input">
+					<input v-model="username" type="text" placeholder = "Username"><br>
 					<input v-model="password" type="Password" placeholder = "Password">
 				</div>
-				<br>
-				<button>Log in</button>
-				<button>Forgot Password</button>
-			</form>
+        <div class="buttons">
+          <router-link to="/">
+            <button>Log in</button>
+          </router-link>
+          <router-link to="/forgot">
+            <button>Forgot Password</button>
+          </router-link>
+        </div>
 		</div>
 	</div>
 </template>
@@ -52,5 +52,21 @@ export default {
 	text-align: center;
 	border: 3px black solid;
   padding: 20px;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+.input {
+  margin-bottom: 5px;
+}
+
+.input input {
+  margin: 3px;
+}
+
+.buttons button {
+  margin: 3px;
 }
 </style>

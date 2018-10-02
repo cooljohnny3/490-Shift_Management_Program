@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .menu {
   height: 100%;
   position: fixed;

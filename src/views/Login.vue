@@ -34,37 +34,24 @@ export default {
 </script>
 
 <style scoped>
-body {
+.login {
 	background-image: url('../assets/Sign-in-background.png');
 	background-repeat: no-repeat;
   background-size: cover;
-}
-
-.container {
-	position: center;
-	width: 500px;
-	margin: auto;
-	padding: 20%;
-	
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .box1 {
+  width: 30%;
+  margin: auto;
+  margin-top: 10rem;
 	background-color: #BBDFF9; 
 	text-align: center;
 	border: 3px black solid;
-	padding: 20px;
-	margin: 0; 
-}
-
-.box1 #loginbtn {
-	border-left-width: 3px;
-	padding: 5px;
-
-}
-
-.box1 #forgotbtn {
-	border-left-width: 3px;
-	padding: 5px;
-
+  padding: 20px;
 }
 </style>

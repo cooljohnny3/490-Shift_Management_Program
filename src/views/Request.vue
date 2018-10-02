@@ -1,9 +1,9 @@
 <template>
   <div class="about">
     <MenuBar/>
-    <h1>Marketplace</h1>
-    <router-link to="marketplace/offer">
-      <p>New Listing</p>
+    <h1>New Request</h1>
+    <router-link to="/marketplace/offer">
+      <button>Toggle</button>
     </router-link>
   </div>
 </template>
@@ -12,7 +12,7 @@
 import MenuBar from '@/components/MenuBar'
 
 export default {
-  name: 'Marketplace',
+  name: 'Request',
   components: {
     MenuBar
   }

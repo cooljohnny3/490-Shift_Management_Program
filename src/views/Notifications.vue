@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div class="notifications">
     <MenuBar/>
-    <h1>Home</h1>
+    <h1>Notifications</h1>
     <NotificationButton/>
   </div>
 </template>
@@ -11,7 +11,7 @@ import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
 
 export default {
-  name: 'Home',
+  name: 'Notifications',
   components: {
     MenuBar,
     NotificationButton

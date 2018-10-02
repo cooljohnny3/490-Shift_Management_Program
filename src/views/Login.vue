@@ -36,7 +36,6 @@ export default {
 <style scoped>
 .login {
 	background-image: url('../assets/Sign-in-background.png');
-	background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
   left: 0;

@@ -8,6 +8,7 @@ import Notifications from './views/Notifications'
 import Settings from './views/Settings'
 import ManagerSettings from './views/ManagerSettings'
 import Login from './views/Login'
+import Forgot from './views/Forgot'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/forgot',
+      name: 'forgot',
+      component: Forgot
     }
   ]
 })

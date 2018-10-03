@@ -49,4 +49,8 @@ export default {
   background-color: #D4EDFF;
   cursor: pointer;
 }
+
+.menu-item:active {
+  transform: scale(.95);
+}
 </style>

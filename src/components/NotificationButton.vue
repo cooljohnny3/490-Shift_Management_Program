@@ -21,4 +21,8 @@ img {
 img:hover {
   cursor: pointer;
 }
+
+img:active {
+    transform: scale(.95);
+}
 </style>

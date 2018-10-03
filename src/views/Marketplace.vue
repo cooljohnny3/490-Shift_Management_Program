@@ -5,16 +5,19 @@
     <router-link to="marketplace/offer">
       <p>New Listing</p>
     </router-link>
+    <NotificationButton/>
   </div>
 </template>
 
 <script>
 import MenuBar from '@/components/MenuBar'
+import NotificationButton from '@/components/NotificationButton'
 
 export default {
   name: 'Marketplace',
   components: {
-    MenuBar
+    MenuBar,
+    NotificationButton
   }
 }
 </script>

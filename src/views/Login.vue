@@ -46,6 +46,7 @@ export default {
 
 .box1 {
   width: 30%;
+  min-width: 150px; /* minimum width so box does not become incredibly small when resizing the window*/
   margin: auto;
   margin-top: 10rem;
 	background-color: #BBDFF9; 

@@ -4,10 +4,10 @@
     <div class= "content">
       <h1>Settings</h1>
       <ul class = "settingList">
-        <li> setting1 </li>
-        <li> setting2 </li>
-        <li> setting3 </li>
-        <li> setting4 </li>
+        <li> Change Password </li>
+        <li> Change Profile Picture </li>
+        <li> Notification Settings </li>
+        <li> Trade History </li>
       </ul>
     </div>
   </div>
@@ -27,13 +27,18 @@ export default {
 <style>
 .content{
   padding-left: 110px;
-  width: 50%;
+  width: 80%;
   margin: auto;
 }
 
 .settingList{
-  list-style-type: none;
+  margin: 0px;
+  padding: 2em;
+  line-height: 2em;
 	background-color: #BBDFF9; 
 	border: 3px black solid;
+  list-style:none;
+  font-size: 150%;
+  text-align: left;
 }
 </style>

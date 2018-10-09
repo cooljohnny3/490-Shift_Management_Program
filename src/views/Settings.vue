@@ -4,7 +4,20 @@
     <div class= "content">
       <h1>Settings</h1>
       <ul class = "settingList">
-        <li> Change Password </li>
+        <li>
+          <details>
+            <summary>Change Password</summary>
+            <label for="">Current Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">Confirm New Password
+              <input type="text" name="" id=""><br>
+            </label>
+          </details> 
+        </li>
         <li> Change Profile Picture </li>
         <li> Notification Settings </li>
         <li> Trade History </li>

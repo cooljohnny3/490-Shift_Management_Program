@@ -7,6 +7,7 @@
         <li>
           <details>
             <summary>Change Password</summary>
+            <div class="settingContent">
             <label for="">Current Password
               <input type="text" name="" id=""><br>
             </label>
@@ -16,11 +17,54 @@
             <label for="">Confirm New Password
               <input type="text" name="" id=""><br>
             </label>
+            </div>
           </details> 
         </li>
-        <li> Change Profile Picture </li>
-        <li> Notification Settings </li>
-        <li> Trade History </li>
+        <li> <details>
+            <summary>Change Profile Picture</summary>
+            <div class="settingContent">
+            <label for="">Current Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">Confirm New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            </div>
+          </details> 
+           </li>
+        <li> <details>
+            <summary>Notification Settings</summary>
+            <div class="settingContent">
+            <label for="">Current Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">Confirm New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            </div>
+          </details>  
+          </li>
+        <li> <details>
+            <summary>Trade History</summary>
+            <div class="settingContent">
+            <label for="">Current Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">Confirm New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            </div>
+          </details>  
+          </li>
       </ul>
     </div>
   </div>
@@ -51,7 +95,13 @@ export default {
 	background-color: #BBDFF9; 
 	border: 3px black solid;
   list-style:none;
-  font-size: 150%;
   text-align: left;
+}
+
+summary{
+  font-size:150%;
+}
+summary .settingContent{
+  left: 100px;
 }
 </style>

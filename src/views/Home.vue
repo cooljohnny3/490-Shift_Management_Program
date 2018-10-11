@@ -43,10 +43,10 @@ export default {
 </script>
 
 <style scoped>
-  
+
   .tradeButton{
 
-    position: relative;
+    position: absolute;
     width: 104.44px;
     height: 31.83px;
     left: 501.41px;
@@ -66,9 +66,9 @@ export default {
    
 .tradePanel{ 
  
-  position: absolute;
-  width: 500px;
-  height: 150px;
+  position: relative;
+  width: 871px;
+  height: 191px;
   left: 115px;
   top: 38px;
   background: #BBDFF9;
@@ -76,21 +76,31 @@ export default {
 
 }
 .switchImage{
-  position: relative;
+  position: absolute;
   width: 52.22px;
   height: 53.06px;
   left: 527.52px;
   top: 81.51px;
 }
 
-.theirShiftTextArea{ 
-  position: relative;
+.theirShiftBox{ 
+  position: absolute;
   width: 300px;
   height: 30px;
   left: 534px;
   top: 79px;
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.theirShiftText{ 
+
+  position: absolute;
+  width: 300px;
+  height: 30px;
+  left: 20px;
+  top: 2px;
+
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -101,9 +111,10 @@ export default {
   color: rgba(0, 0, 0, 0.5);
 }
 
+
 .yourShiftTextArea{  
 
-  position: relative;
+  position: absolute;
   width: 300px;
   height: 30px;
   left: 184px;
@@ -116,11 +127,31 @@ export default {
   line-height: normal;
   font-size: 21px;
   text-align: center;
-  
+  display: inline-block;
   color: rgba(0, 0, 0, 0.5);
 }
 
 
 
+.calender{
+
+  /* Grid */
+  position: relative;
+  width: 411px;
+  height: 190.85px;
+  left: 1004px;
+  top: 38.15px;
+
+  /* Rectangle 2 */
+
+  position: absolute;
+  width: 410.01px;
+  height: 190.82px;
+  left: 1004px;
+  top: 38.16px;
+
+  background: #BBDFF9;
+  border-radius: 15px;
+}
 
 </style>

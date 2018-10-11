@@ -71,7 +71,7 @@ export default {
    
 .tradePanel{ 
  
-  position: absolute;
+  position: relative;
   width: 871px;
   height: 191px;
   left: 115px;
@@ -103,8 +103,8 @@ export default {
   position: absolute;
   width: 300px;
   height: 30px;
-  left: 300px;
-  top: 104px;
+  left: 20px;
+  top: 2px;
 
   font-family: Roboto;
   font-style: normal;
@@ -141,7 +141,7 @@ export default {
 .calender{
 
   /* Grid */
-  position: absolute;
+  position: relative;
   width: 411px;
   height: 190.85px;
   left: 1004px;

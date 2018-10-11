@@ -3,9 +3,9 @@
     <MenuBar/>
 
     <!--Trade shift inputs -->
-    <form name="shiftTradeForm"> 
+    <form class="tradePanel"> 
       
-      <div class ="tradePanel"> 
+      
         <div class="yourShiftTextArea">
             <input type="text" name="yourShift" placeholder="Your Shift...">
         </div>
@@ -22,7 +22,7 @@
           <input type="submit" Value="TRADE!" class="tradeButton">
         </div>
         
-      </div>
+    
 
     </form>
     <NotificationButton/>
@@ -46,7 +46,7 @@ export default {
   
   .tradeButton{
 
-    position: absolute;
+    position: relative;
     width: 104.44px;
     height: 31.83px;
     left: 501.41px;
@@ -67,8 +67,8 @@ export default {
 .tradePanel{ 
  
   position: absolute;
-  width: 871px;
-  height: 191px;
+  width: 500px;
+  height: 150px;
   left: 115px;
   top: 38px;
   background: #BBDFF9;
@@ -76,31 +76,21 @@ export default {
 
 }
 .switchImage{
-  position: absolute;
+  position: relative;
   width: 52.22px;
   height: 53.06px;
   left: 527.52px;
   top: 81.51px;
 }
 
-.theirShiftBox{ 
-  position: absolute;
+.theirShiftTextArea{ 
+  position: relative;
   width: 300px;
   height: 30px;
   left: 534px;
   top: 79px;
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.theirShiftText{ 
-
-  position: absolute;
-  width: 300px;
-  height: 30px;
-  left: 300px;
-  top: 104px;
-
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -111,10 +101,9 @@ export default {
   color: rgba(0, 0, 0, 0.5);
 }
 
-
 .yourShiftTextArea{  
 
-  position: absolute;
+  position: relative;
   width: 300px;
   height: 30px;
   left: 184px;
@@ -127,7 +116,7 @@ export default {
   line-height: normal;
   font-size: 21px;
   text-align: center;
-  display: inline-block;
+  
   color: rgba(0, 0, 0, 0.5);
 }
 

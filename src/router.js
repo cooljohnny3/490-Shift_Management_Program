@@ -12,114 +12,52 @@ import Forgot from './views/Forgot'
 
 Vue.use(Router)
 
-let router =  new Router({
+export default new Router({
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home,
-      meta: { 
-        requiresAuth: true
-      }
+      component: Home
     },
     {
       path: '/marketplace',
       name: 'marketplace',
-      component: Marketplace,
-      meta: { 
-        requiresAuth: true
-      }
+      component: Marketplace
     },
     {
       path: '/marketplace/offer',
       name: 'offer',
-      component: Offer,
-      meta: { 
-        requiresAuth: true
-      }
+      component: Offer
     },
     {
       path: '/marketplace/request',
       name: 'request',
-      component: Request,
-      meta: { 
-        requiresAuth: true
-      }
+      component: Request
     },
     {
       path: '/notifications',
       name: 'notifications',
-      component: Notifications,
-      meta: { 
-        requiresAuth: true
-      }
+      component: Notifications
     },
     {
       path: '/settings',
       name: 'settings',
-      component: Settings,
-      meta: { 
-        requiresAuth: true
-      }
+      component: Settings
     },
     {
       path: '/manager-settings',
       name: 'manager-settings',
-      component: ManagerSettings,
-      meta: {
-        requiresAuth: true,
-        isAdmin: true
-      }
+      component: ManagerSettings
     },
     {
       path: '/login',
       name: 'login',
-      component: Login,
-      meta: {
-        guest: true
-      }
+      component: Login
     },
     {
       path: '/forgot',
       name: 'forgot',
-      component: Forgot,
-      meta: {
-        guest: true
-      }
+      component: Forgot
     }
   ]
-});
-
-router.beforeEach((to, from, next) => {
-  if(to.matched.some(record => record.meta.requiresAuth)) {
-      if (localStorage.getItem('jwt') == null) {
-          next({
-              path: '/login',
-              params: { nextUrl: to.fullPath }
-          });
-      } else {
-          let user = JSON.parse(localStorage.getItem('user'))
-          if(to.matched.some(record => record.meta.is_admin)) {
-              if(user.is_admin == 1){
-                  next();
-              }
-              else{
-                  next({ name: 'userboard'});
-              }
-          }else {
-              next();
-          }
-      }
-  } else if(to.matched.some(record => record.meta.guest)) {
-      if(localStorage.getItem('jwt') == null){
-          next();
-      }
-      else{
-          next({ name: 'userboard'})
-      }
-  }else {
-      next() 
-  }
 })
-
-export default router;

@@ -4,26 +4,15 @@
 
     <!--Trade shift inputs -->
     <form class="tradePanel"> 
-      
-      
-        <div class="yourShiftTextArea">
-            <input type="text" name="yourShift" placeholder="Your Shift...">
-        </div>
-        <div class="theirShiftBox">
-          <div class="theirShiftText">
-            <input type="text" name="theirShift" placeholder="Their Shift...">
-          </div>
-        </div>
-        <div class="switchImage">
-          <img src="@/assets/Switch.png" class="switchIcon">
-        </div>
+  
+      <input type="yourShift" name="yourShift" placeholder="Your Shift...">
 
-        <div class="">
-          <input type="submit" Value="TRADE!" class="tradeButton">
-        </div>
-        
-    
+      <img src="@/assets/Switch.png" class="switchImage">
 
+      <input type="theirShift" name="theirShift" placeholder="Their Shift...">
+
+      <input type="submit" Value="TRADE!" class="tradeButton">
+      
     </form>
     <NotificationButton/>
   </div>
@@ -40,17 +29,99 @@ export default {
     NotificationButton
   }
 }
+function getAdvancedData() {
+            var year = new Date().getFullYear();
+            return [
+                { 
+                    name: 'Task1', 
+                    start: new Date(year, 0, 1), 
+                    end: new Date(year, 2, 31), 
+                    parent: null, 
+                    percent: 100
+                },
+                { 
+                    name: 'Task2', 
+                    start: new Date(year, 3, 1), 
+                    end: new Date(year, 3, 30), 
+                    parent: 'Task1', 
+                    percent: 100
+                },
+                // ...
+                { 
+                    name: 'Task7', 
+                    start: new Date(year, 0, 1), 
+                    end: new Date(year, 11, 31), 
+                    parent: null, 
+                    percent: 50 
+                }
+            ];
+        }
+        
 </script>
 
 <style scoped>
+  .tradePanel{ 
+ 
+    position:absolute;
+    width: 700px;
+    height: 175px;
+    left: 110px;
+    top: 30px;
+    background: #BBDFF9;
+    border-radius: 15px;
+  }
+  
 
-  .tradeButton{
+  input[type=yourShift]{
+    position:absolute;
+    width: 225px;
+    height: 30px;
+    left: 40px;
+    top: 40px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 17px;
+    text-align: center;
+    border:0px;
+    
+    
+  }
+
+.switchImage{
+  
+  width: 52.22px;
+  height: 53.06px;
+  left:325px;
+  top:33px;
+}
+input[type=theirShift]{
+  position:absolute;
+  width: 225px;
+  height: 30px;
+  right:40px;
+  top: 40px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 17px;
+  text-align: center;
+  border:0px;
+}
+
+.tradeButton{
 
     position: absolute;
-    width: 104.44px;
-    height: 31.83px;
-    left: 501.41px;
-    top: 163.21px;
+    width: 100px;
+    height: 32px;
+    left: 300px;
+    bottom: 30px;
 
     font-family: Roboto;
     font-style: normal;
@@ -63,75 +134,6 @@ export default {
     background: #59B9FF;
     border-radius: 15px;
 }
-   
-.tradePanel{ 
- 
-  position: relative;
-  width: 871px;
-  height: 191px;
-  left: 115px;
-  top: 38px;
-  background: #BBDFF9;
-  border-radius: 15px;
-
-}
-.switchImage{
-  position: absolute;
-  width: 52.22px;
-  height: 53.06px;
-  left: 527.52px;
-  top: 81.51px;
-}
-
-.theirShiftBox{ 
-  position: absolute;
-  width: 300px;
-  height: 30px;
-  left: 534px;
-  top: 79px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.theirShiftText{ 
-
-  position: absolute;
-  width: 300px;
-  height: 30px;
-  left: 20px;
-  top: 2px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 18px;
-  text-align: center;
-
-  color: rgba(0, 0, 0, 0.5);
-}
-
-
-.yourShiftTextArea{  
-
-  position: absolute;
-  width: 300px;
-  height: 30px;
-  left: 184px;
-  top: 99px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 21px;
-  text-align: center;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-
 
 .calender{
 

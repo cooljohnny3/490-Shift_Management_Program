@@ -58,11 +58,8 @@ export default {
     MenuBar,
     NotificationButton
   }
-  ,graph
 }
 
-        
-        
 </script>
 
 <style scoped>

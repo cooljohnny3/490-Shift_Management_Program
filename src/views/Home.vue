@@ -14,43 +14,29 @@
       <input type="submit" Value="TRADE!" class="tradeButton">
       
     </form>
+    <body>
+      <canvas id="myCanvas" class="chart"></canvas>
+    </body>
     <NotificationButton/>
   </div>
 </template>
 
+  
+
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
+
 <script>
 import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
-
-
-function getAdvancedData() {
-  var year = new Date().getFullYear();
-  return [
-    { 
-      name: 'Task1', 
-      start: new Date(year, 0, 1), 
-      end: new Date(year, 2, 31), 
-      parent: null, 
-      percent: 100
-    },
-    { 
-      name: 'Task2', 
-      start: new Date(year, 3, 1), 
-      end: new Date(year, 3, 30), 
-      parent: 'Task1', 
-      percent: 100
-    },
-    // ...
-    { 
-      name: 'Task7', 
-      start: new Date(year, 0, 1), 
-      end: new Date(year, 11, 31), 
-      parent: null, 
-      percent: 50 
-    }
-  ];
-}
-
 
 export default {
   name: 'Home',
@@ -63,6 +49,23 @@ export default {
 </script>
 
 <style scoped>
+  .home{
+    background:#F0F0F0;
+  }
+  .chart{
+    /* Background */
+
+    position: absolute;
+    width: 1300px;
+    height: 700px;
+    left: 115px;
+    top: 254px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+  }
   .tradePanel{ 
  
     position:absolute;

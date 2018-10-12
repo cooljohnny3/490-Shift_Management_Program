@@ -21,19 +21,6 @@
   </div>
 </template>
 
-  
-
-
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>
-
 <script>
 import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
@@ -51,16 +38,17 @@ export default {
 <style scoped>
   .home{
     background:#F0F0F0;
+    margin-top:1000px;
   }
   .chart{
     /* Background */
 
     position: absolute;
-    width: 1300px;
+    width: 1200px;
     height: 700px;
-    left: 115px;
-    top: 254px;
-
+    left: 75px;
+    top: 200px;
+    display:inline-block;
     background: #FFFFFF;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
@@ -69,21 +57,20 @@ export default {
   .tradePanel{ 
  
     position:absolute;
-    width: 700px;
-    height: 175px;
-    left: 110px;
-    top: 30px;
+    width: 625px;
+    height: 125px;
+    left: 75px;
+    top: 20px;
     background: #BBDFF9;
     border-radius: 15px;
   }
   
-
   input[type=yourShift]{
     position:absolute;
     width: 225px;
-    height: 30px;
-    left: 40px;
-    top: 40px;
+    height: 25px;
+    left: 30px;
+    top: 30px;
     background: #FFFFFF;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Roboto;
@@ -98,18 +85,18 @@ export default {
   }
 
 .switchImage{
-  
-  width: 52.22px;
-  height: 53.06px;
-  left:325px;
-  top:33px;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left:290px;
+  top:25px;
 }
 input[type=theirShift]{
   position:absolute;
   width: 225px;
-  height: 30px;
-  right:40px;
-  top: 40px;
+  height: 25px;
+  right:30px;
+  top: 30px;
   background: #FFFFFF;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Roboto;
@@ -124,19 +111,19 @@ input[type=theirShift]{
 .tradeButton{
 
     position: absolute;
-    width: 100px;
-    height: 32px;
-    left: 300px;
-    bottom: 30px;
+    width: 75px;
+    height: 25px;
+    left: 275px;
+    bottom: 20px;
 
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     line-height: normal;
-    font-size: 18px;
+    font-size: 13px;
 
     color: #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 3px rgba(0, 0, 0, 0.1);
     background: #59B9FF;
     border-radius: 15px;
 }

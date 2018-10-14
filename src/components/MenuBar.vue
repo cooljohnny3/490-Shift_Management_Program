@@ -12,9 +12,9 @@
     <router-link v-if="manager" to="/manager-settings" class="menu-item">
       <i class='fa fa-wrench fa-3x'/>
     </router-link>
-    <router-link to="/login" class="menu-item">
+    <div class="menu-item" v-on:click="logout">
       <i class='fa fa-power-off fa-3x'/>
-    </router-link>
+    </div>
   </div>
 </template>
 
@@ -23,8 +23,22 @@ export default {
   name: 'MenuBar',
   data() {
     return {
+<<<<<<< HEAD
       manager: true 
+=======
+>>>>>>> user_auth
       //toggles manager options in menubar
+      manager: this.checkAdmin()
+    }
+  },
+
+  methods : {
+    checkAdmin() { return JSON.parse(localStorage.getItem('user')).is_admin == 1; },
+
+    logout() {
+      localStorage.removeItem('jwt');
+      localStorage.removeItem('user');
+      this.$router.push("/login");
     }
   }
 }

@@ -23,16 +23,17 @@ export default {
   name: 'MenuBar',
   data() {
     return {
-      manager: this.checkAdmin()
       //toggles manager options in menubar
+      manager: this.checkAdmin()
     }
   },
 
   methods : {
-    
+    checkAdmin() { return JSON.parse(localStorage.getItem('user')).is_admin == 1; },
 
     logout() {
       localStorage.removeItem('jwt');
+      localStorage.removeItem('user');
       this.$router.push("/login");
     }
   }

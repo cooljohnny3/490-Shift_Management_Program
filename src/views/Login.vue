@@ -41,6 +41,8 @@ export default {
             password: this.password
           })
           .then(response => {
+            // TODO make more secure
+            localStorage.setItem('user', JSON.stringify(response.data.user));
             localStorage.setItem("jwt", response.data.token);
             if (localStorage.getItem("jwt") != null) {
               if (this.$route.params.nextUrl != null) {

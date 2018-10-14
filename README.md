@@ -12,9 +12,19 @@ employers to know and approve of it.
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Starts Vue and express servers
 ```
-npm run serve
+npm run start
+```
+
+### Starts Vue server
+```
+npm run vue
+```
+
+### Starts express server
+```
+npm run server
 ```
 
 ### Compiles and minifies for production

@@ -18,7 +18,7 @@ router.use(bodyParser.json());
 const allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', '*');
-  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Headers', 'content-type');
   next();
 }
 
@@ -60,6 +60,7 @@ router.post('/register-admin', function(req, res) {
 });
 
 router.post('/login', (req, res) => {
+  console.log(req.body);
   db.selectByEmail(req.body.email, (err, user) => {
       if (err) return res.status(500).send('Error on the server.');
       if (!user) return res.status(404).send('No user found.');

@@ -28,7 +28,7 @@ export default {
     }
   },
 
-  methods : {
+  methods: {
     checkAdmin() { return JSON.parse(localStorage.getItem('user')).is_admin == 1; },
 
     logout() {

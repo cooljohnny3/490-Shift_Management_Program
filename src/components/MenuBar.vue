@@ -23,10 +23,6 @@ export default {
   name: 'MenuBar',
   data() {
     return {
-<<<<<<< HEAD
-      manager: true 
-=======
->>>>>>> user_auth
       //toggles manager options in menubar
       manager: this.checkAdmin()
     }

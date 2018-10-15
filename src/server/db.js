@@ -1,5 +1,3 @@
-const bcrypt = require('bcrypt');
-
 "use strict";
 const mysql = require('mysql');
 const config = require('./config');

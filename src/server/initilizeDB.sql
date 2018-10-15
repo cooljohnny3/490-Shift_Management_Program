@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS SKEJ;
-CREATE USER 'db_user'@'localhost' IDENTIFIED WITH ,ysql_native_password BY 'password';
+CREATE USER 'db_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 GRANT ALL PRIVILEGES ON SKEJ.* TO 'db_user'@'localhost';
 
 USE SKEJ;

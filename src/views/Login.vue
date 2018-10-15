@@ -12,9 +12,11 @@
           <router-link to="/">
             <button>Log in</button>
           </router-link>
+          <!--
           <router-link to="/forgot">
             <button>Forgot Password</button>
           </router-link>
+          -->
         </div>
 		</div>
 	</div>

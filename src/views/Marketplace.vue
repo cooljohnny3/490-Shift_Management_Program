@@ -2,6 +2,7 @@
   <div class="about">
     <MenuBar/>
     <h1>Marketplace</h1>
+<<<<<<< HEAD
     <table id="listings" style="width:100%">
   <tr>
     <th>Type</th>
@@ -55,6 +56,9 @@
   </tr>
 </table>
     <router-link to="marketplace/offer">
+=======
+    <router-link to="marketplace/listing">
+>>>>>>> bd521e2129f88ce97ca49c641862a1aab6fdfdab
       <p>New Listing</p>
     </router-link>
     <NotificationButton/>

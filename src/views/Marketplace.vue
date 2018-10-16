@@ -2,7 +2,7 @@
   <div class="about">
     <MenuBar/>
     <h1>Marketplace</h1>
-    <router-link to="marketplace/offer">
+    <router-link to="marketplace/listing">
       <p>New Listing</p>
     </router-link>
     <NotificationButton/>

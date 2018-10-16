@@ -2,13 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
 import Marketplace from './views/Marketplace'
-import Offer from './views/Offer'
-import Request from './views/Request'
 import Notifications from './views/Notifications'
 import Settings from './views/Settings'
 import ManagerSettings from './views/ManagerSettings'
 import Login from './views/Login'
 import Forgot from './views/Forgot'
+import Listing from './views/Listing'
 
 Vue.use(Router)
 
@@ -23,16 +22,6 @@ export default new Router({
       path: '/marketplace',
       name: 'marketplace',
       component: Marketplace
-    },
-    {
-      path: '/marketplace/offer',
-      name: 'offer',
-      component: Offer
-    },
-    {
-      path: '/marketplace/request',
-      name: 'request',
-      component: Request
     },
     {
       path: '/notifications',
@@ -58,6 +47,11 @@ export default new Router({
       path: '/forgot',
       name: 'forgot',
       component: Forgot
+    },
+    {
+      path: '/marketplace/listing',
+      name: 'listing',
+      component: Listing
     }
   ]
 })

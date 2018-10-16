@@ -27,7 +27,7 @@ class Db {
 
   insertAdmin(user, callback) {
     return this.db.query(
-      'INSERT INTO users (name,email,user_pass,is_admin) VALUES (?,?,?,?)',
+      'INSERT INTO users (first_name,last_name,email,user_pass,is_admin) VALUES (?,?,?,?,?)',
       user, (err) => {
         callback(err)
       })
@@ -41,7 +41,7 @@ class Db {
 
   insert(user, callback) {
     return this.db.query(
-      'INSERT INTO users (name,email,user_pass) VALUES (?,?,?)',
+      'INSERT INTO users (first_name,last_name,email,user_pass) VALUES (?,?,?,?)',
       user, (err) => {
         callback(err)
       })

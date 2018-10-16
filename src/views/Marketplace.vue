@@ -1,8 +1,7 @@
 <template>
   <div class="about">
-    <MenuBar/>
     <h1>Marketplace</h1>
-    <table id="listings" style="width:100%">
+    <table id="listings" style="width:96%">
   <tr>
     <th>Type</th>
     <th>First Name</th> 
@@ -54,6 +53,7 @@
     <td>Take</td>
   </tr>
 </table>
+    <MenuBar/>
     <router-link to="marketplace/offer">
     <router-link to="marketplace/listing">
       <p>New Listing</p>
@@ -83,6 +83,37 @@ width: 1000px;
 height: 200px;
 left: 50px;
 top: 300px;
+border-collapse: collapse;
+}
+
+#listings td, #listings th
+{
+  border: 1px solid black;
+  padding: 8px;
+}
+
+#listings tr:nth-child(even)
+{
+  background-color: #B9E2FF;
+}
+
+#listings tr:nth-child(odd)
+{
+  background-color: #D4EDFF;
+}
+
+#listings tr:hover
+{
+  background-color: #59B9FF;
+}
+
+#listings th
+{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #B9E2FF;
+  color: black;
 }
 
 /* Request 1 */
@@ -147,8 +178,7 @@ top: 382px;
 background: #59B9FF;
 border-radius: 31px;
 
-
-.givetake{
+/*givetake*/
 position: absolute;
 width: 198.66px;
 height: 36px;
@@ -163,7 +193,7 @@ font-size: 24px;
 text-align: center;
 
 color: #000000;
-}
+
 
 
 /* Request 1.1 */

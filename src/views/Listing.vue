@@ -7,22 +7,31 @@
             <!-- Rounded switch -->
             <h2>New Offer </h2>
             <label class="switch">
-            <input id="checkbox" name="checkbox" type="checkbox"/>
+            <input id="checkbox" name="checkbox" type="checkbox" v-model="checked"/>
             <span class="slider round"></span>
             </label>
             <h2>New Request</h2>
         </div>
-        <div id="offer">
-            This is Offer<br>
-            Date of shift:
-            <input type=text placeholder="MM/DD/YYYY">
-            <button>Submit</button>
-        </div>
-        <div id = "request">
-            This is Request<br>
-            Date of shift:
-            <input type=text placeholder="MM/DD/YYYY">
-            <button>Submit</button>
+        <div class="grid">
+            <div id="offer" v-if="!checked">
+                <h3>Offer a shift</h3>
+                Date of shift:
+                <input type=text v-model="fillDate" placeholder="MM/DD/YYYY">
+                <button>Submit</button>
+            </div>
+            <div id = "request" v-else>
+                <h3>Request a shift</h3>
+                Date of shift:
+                <input type=text  v-model="fillDate" placeholder="MM/DD/YYYY">
+                <br>Earliest the shift can start: 
+                <input type=text placeholder="00:00">
+                <br> Latest the shift can end: 
+                <input type=text placeholder="24:00">
+                <button>Submit</button>
+            </div>
+            <div class="chart">
+                <datepicker :inline="true" v-model="date" @selected="handleDateChange" id="offerDate"/>
+            </div>
         </div>
     </div>
   </div>
@@ -33,40 +42,69 @@
 
 <script>
 import MenuBar from "@/components/MenuBar";
+import Datepicker from 'vuejs-datepicker';
 import Offer from "@/components/Offer";
 import Request from "@/components/Request";
+
 
 export default {
   name: "Listing",
   components: {
     MenuBar,
     Offer,
-    Request
+    Request,
+    Datepicker
+  },
+
+  data() {
+      return {
+        checked: false,
+        date: new Date(),
+        fillDate: (new Date()).toLocaleDateString("en-US")
+      }
+  },
+    methods: {
+    handleDateChange(date) {
+      console.log(date.toLocaleDateString("en-US"));
+      this.fillDate = date.toLocaleDateString("en-US");
+    }
   }
 }
 
-$("#content :checkbox").change(function() {
-    alert("In function");
-    if (this.checked != true) {
-        $("#request").show();
-        $("#offer").hide();
-    }
-    else{
-        $("#request").hide();
-        $("#offer").show();  
-    }
-    
-});
+
+
 </script>
 
 <style>
+.grid{
+    display: grid;
+    grid-template-columns: 60% auto;
+}
+.content{
+    text-align: left;
+}
+.content #offer {
+    text-align: left;
+}
 .content h2 {
   display: inline;
 }
 
 .box1 {
-  outline: 3px solid black;
+  width: auto;
 }
+
+.chart{
+    /* Background */
+    position: relative;
+    align-content: right;
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    top: 0px;
+    display:inline-block;
+    border-radius: 15px;
+  }
 
 /* The switch - the box around the slider */
 .switch {

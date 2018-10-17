@@ -33,11 +33,11 @@ export default {
 <style scoped>
 .menu {
   height: 100%;
-  
   position: fixed;
   top: 0;
   left: 0;
   background-color: #59B9FF;
+  z-index: 1;
 }
 
 .menu-item {

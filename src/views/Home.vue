@@ -1,48 +1,60 @@
 <template>
   <div class="home">
     <MenuBar/>
-
-    <!--Trade shift inputs -->
-    <form class="tradePanel"> 
-  
-      <input type="yourShift" name="yourShift" placeholder="Your Shift...">
-
-      <img src="@/assets/Switch.png" class="switchImage">
-
-      <input type="theirShift" name="theirShift" placeholder="Their Shift...">
-
-      <input type="submit" Value="TRADE!" class="tradeButton">
-      
-    </form>
-    <body>
-      <canvas id="myCanvas" class="chart"></canvas>
-    </body>
-    <NotificationButton/>
+    <div class="content">
+      <div class="top-bar">
+        <!--Trade shift inputs -->
+        <form class="tradePanel">
+          <input type="yourShift" name="yourShift" placeholder="Your Shift...">
+          <img src="@/assets/Switch.png" class="switchImage">
+          <input type="theirShift" name="theirShift" placeholder="Their Shift...">
+          <input type="submit" Value="TRADE!" class="tradeButton">
+        </form>
+        <datepicker :inline="true" v-model="date" @selected="handleDateChange"/>
+      </div>
+      <div>CHART</div>
+      <NotificationButton/>
+    </div>
   </div>
 </template>
 
 <script>
 import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
+import Datepicker from 'vuejs-datepicker';
 
 export default {
   name: 'Home',
   components: {
     MenuBar,
+    Datepicker,
     NotificationButton
+  },
+
+  data() {
+    return {
+      date: new Date(),
+    }
+  },
+
+  methods: {
+    handleDateChange(date) {
+      console.log(date);
+      this.date = date;
+    }
   }
 }
 
 </script>
 
 <style scoped>
-  .home{
-    background:#F0F0F0;
-    margin-top:1000px;
+  .top-bar {
+    display: grid;
+    grid-template-columns: auto auto;
   }
+
   .chart{
     /* Background */
-
     position: absolute;
     width: 1200px;
     height: 700px;
@@ -52,17 +64,20 @@ export default {
     background: #FFFFFF;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-
   }
-  .tradePanel{ 
- 
-    position:absolute;
+  
+  .tradePanel{
+    position: relative;
+    margin-top: 25px;
+    display: inline-block;
     width: 625px;
     height: 125px;
-    left: 75px;
-    top: 20px;
     background: #BBDFF9;
     border-radius: 15px;
+  }
+
+  .vdp-datepicker {
+    display: inline-block;
   }
   
   input[type=yourShift]{
@@ -80,8 +95,6 @@ export default {
     font-size: 17px;
     text-align: center;
     border:0px;
-    
-    
   }
 
 .switchImage{
@@ -91,6 +104,7 @@ export default {
   left:290px;
   top:25px;
 }
+
 input[type=theirShift]{
   position:absolute;
   width: 225px;
@@ -109,19 +123,16 @@ input[type=theirShift]{
 }
 
 .tradeButton{
-
     position: absolute;
     width: 75px;
     height: 25px;
     left: 275px;
     bottom: 20px;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     line-height: normal;
     font-size: 13px;
-
     color: #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 3px rgba(0, 0, 0, 0.1);
     background: #59B9FF;
@@ -129,7 +140,6 @@ input[type=theirShift]{
 }
 
 .calender{
-
   /* Grid */
   position: relative;
   width: 411px;
@@ -138,13 +148,11 @@ input[type=theirShift]{
   top: 38.15px;
 
   /* Rectangle 2 */
-
   position: absolute;
   width: 410.01px;
   height: 190.82px;
   left: 1004px;
   top: 38.16px;
-
   background: #BBDFF9;
   border-radius: 15px;
 }

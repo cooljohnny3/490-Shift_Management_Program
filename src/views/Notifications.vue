@@ -1,7 +1,9 @@
 <template>
   <div class="notifications">
     <MenuBar/>
-    <h1>Notifications</h1>
+    <div class="content">
+      <h1>Notifications</h1>
+    </div>
   </div>
 </template>
 

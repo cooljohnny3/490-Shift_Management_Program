@@ -1,6 +1,8 @@
 <template>
+	<div class="marketplace">
+    <MenuBar/>
 
-	<div class="about">
+    <div class="content">
 
 		<h1>Marketplace</h1>
 
@@ -57,16 +59,13 @@
 		</tr>
 	</table>
 
-	<MenuBar/>
-
 	<router-link to="marketplace/listing">
 		<button id="newlisting" class="button">New Listing</button>
 	</router-link>
 
 	<NotificationButton/>
-	
 	</div>
-
+	</div>
 </template>
 
 <script>

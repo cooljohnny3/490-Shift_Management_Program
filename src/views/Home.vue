@@ -12,7 +12,7 @@
         </form>
         <datepicker :inline="true" v-model="date" @selected="handleDateChange"/>
       </div>
-      <div>CHART</div>
+      <Chart/> 
       <NotificationButton/>
     </div>
   </div>
@@ -22,12 +22,14 @@
 import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
 import Datepicker from 'vuejs-datepicker';
+import Chart from '@/components/Chart';
 
 export default {
   name: 'Home',
   components: {
     MenuBar,
     Datepicker,
+    Chart,
     NotificationButton
   },
 

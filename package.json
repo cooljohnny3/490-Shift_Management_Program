@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "bcrypt": "^3.0.1",
+    "d3": "^5.7.0",
     "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuejs-datepicker": "^1.5.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",

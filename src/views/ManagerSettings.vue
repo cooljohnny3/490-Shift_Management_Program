@@ -247,8 +247,6 @@
   <span class="help-block"></span>  
   </div>
 </div>
-
-
 <br>
 <br>
 <br>
@@ -272,7 +270,6 @@
             </div> 
             
 		</div>  
- 
 <br>
 <br>
 <br>
@@ -314,11 +311,8 @@
   <span class="help-block"></span>  
   </div>
 </div>
-<br>
-<br>
-<br>
 <form action="" method="">
-    <input type="submit" name="submitbutton"value="Delete">
+    <input type="submit" name="submitbutton" value="Delete">
     </form>
 
 <br/>

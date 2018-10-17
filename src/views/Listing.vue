@@ -1,7 +1,9 @@
 <template>
   <div class="about">
     <MenuBar/>
-    <h1>New Offer</h1>
+    <div class="content">
+      <h1>New Offer</h1>
+    </div>
   </div>
 </template>
 

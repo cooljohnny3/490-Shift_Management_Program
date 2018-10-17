@@ -62,13 +62,7 @@ export default {
 
 </script>
 
-<style>
-.content{
-  padding-left: 110px;
-  width: 80%;
-  margin: auto;
-}
-
+<style scoped>
 .settingList{
   margin: 0px;
   padding: 2em;

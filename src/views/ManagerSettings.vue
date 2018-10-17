@@ -1,6 +1,7 @@
 <template>
   <div class="manager-settings">
     <MenuBar />
+    <div class="content">
     <h1>Manager Settings</h1>
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
@@ -170,7 +171,7 @@
       </div>
     </main>
 
-
+  </div>
   </div>
 </template>
 

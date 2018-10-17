@@ -2,56 +2,90 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
 import Marketplace from './views/Marketplace'
+import Offer from './views/Offer'
+import Request from './views/Request'
 import Notifications from './views/Notifications'
 import Settings from './views/Settings'
 import ManagerSettings from './views/ManagerSettings'
 import Login from './views/Login'
 import Forgot from './views/Forgot'
-import Listing from './views/Listing'
 
 Vue.use(Router)
 
-export default new Router({
+let router =  new Router({
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/marketplace',
       name: 'marketplace',
-      component: Marketplace
+      component: Marketplace,
+      meta: { 
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/marketplace/offer',
+      name: 'offer',
+      component: Offer,
+      meta: { 
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/marketplace/request',
+      name: 'request',
+      component: Request,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/notifications',
       name: 'notifications',
-      component: Notifications
+      component: Notifications,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/settings',
       name: 'settings',
-      component: Settings
+      component: Settings,
+      meta: { 
+        requiresAuth: true
+      }
     },
     {
       path: '/manager-settings',
       name: 'manager-settings',
-      component: ManagerSettings
+      component: ManagerSettings,
+      meta: {
+        requiresAuth: true,
+        isAdmin: true
+      }
     },
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
+      meta: {
+        guest: true
+      }
     },
     {
       path: '/forgot',
       name: 'forgot',
-      component: Forgot
-    },
-    {
-      path: '/marketplace/listing',
-      name: 'listing',
-      component: Listing
+      component: Forgot,
+      meta: {
+        guest: true
+      }
     }
   ]
 });
@@ -87,3 +121,5 @@ router.beforeEach((to, from, next) => {
       next() 
   }
 })
+
+export default router;

@@ -22,27 +22,47 @@
         </li>
         <li> <details>
             <summary>Change Profile Picture</summary>
-           <div>
-             <form>
-        <input type="file" 
-               id="avatar" name="avatar"
-               accept="image/png, image/jpeg" />
-<input type="button" value="Submit" onClick="window.location.reload()">             </form>
-           </div>
+            <div class="settingContent">
+            <label for="">Current Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">Confirm New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            </div>
           </details> 
            </li>
         <li> <details>
-          <!-- use database to determine which boxes are checked initially -->
             <summary>Notification Settings</summary>
-            <input type="checkbox" > text<br>
-            <input type="checkbox" > text<br>
-            <input type="checkbox" > text<br>
-            <input type="checkbox" > text<br>
+            <div class="settingContent">
+            <label for="">Current Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">Confirm New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            </div>
           </details>  
           </li>
         <li> <details>
             <summary>Trade History</summary>
-              <!-- Place trade history after backend is made -->
+            <div class="settingContent">
+            <label for="">Current Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            <label for="">Confirm New Password
+              <input type="text" name="" id=""><br>
+            </label>
+            </div>
           </details>  
           </li>
       </ul>
@@ -59,10 +79,15 @@ export default {
     MenuBar
   }
 }
-
 </script>
 
-<style scoped>
+<style>
+.content{
+  padding-left: 110px;
+  width: 80%;
+  margin: auto;
+}
+
 .settingList{
   margin: 0px;
   padding: 2em;

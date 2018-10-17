@@ -1,23 +1,21 @@
 <template>
   <div class="login">
-		<div class="box1">
-			<h1>
-				SKEJ
-			</h1>
-				<div class="input">
-					<input v-model="username" type="text" placeholder = "Username"><br>
-					<input v-model="password" type="Password" placeholder = "Password">
-				</div>
-        <div class="buttons">
-          <router-link to="/">
-            <button>Log in</button>
-          </router-link>
-          <!--
-          <router-link to="/forgot">
-            <button>Forgot Password</button>
-          </router-link>
-          -->
-        </div>
+      <div class="box1">
+        <h1>
+          SKEJ
+        </h1>
+        <form>
+          <div class="input">
+            <input v-model="email" type="text" placeholder = "Email" required autofocus><br>
+            <input v-model="password" type="Password" placeholder = "Password" required>
+          </div>
+          <div class="buttons">
+            <button type="submit" v-on:click="handleSubmit">Log in</button>
+            <router-link to="/forgot">
+              <button>Forgot Password</button>
+            </router-link>
+          </div>
+        </form>
 		</div>
 	</div>
 </template>

@@ -1,6 +1,8 @@
 <template>
     <div id="viz">
-        <h1>CHART</h1>
+        <svg class = "chart" width = "300" height ="300">
+          <rect class ="rec" x="50" y="20" width="150" height="150"/>
+        </svg>
     </div>
 </template>
 <script>
@@ -37,12 +39,16 @@ export default {
 </script>
 
 <style scoped>
-body {
+.chart{
+  background:green;
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
 }
-
+.rec{
+  background:dodgerblue;
+  
+  }
 .axis path {
   fill: none;
   stroke: grey;

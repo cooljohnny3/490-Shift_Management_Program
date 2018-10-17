@@ -14,9 +14,9 @@
       <input type="submit" Value="TRADE!" class="tradeButton">
       
     </form>
-    <body>
-      <canvas id="myCanvas" class="chart"></canvas>
-    </body>
+    
+    <Chart/>
+    
     <NotificationButton/>
   </div>
 </template>
@@ -24,21 +24,23 @@
 <script>
 import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
+import Chart from '@/components/Chart'
 
 export default {
   name: 'Home',
   components: {
     MenuBar,
-    NotificationButton
+    NotificationButton,
+    Chart
   }
 }
+
 
 </script>
 
 <style scoped>
   .home{
     background:#F0F0F0;
-    margin-top:1000px;
   }
   .chart{
     /* Background */

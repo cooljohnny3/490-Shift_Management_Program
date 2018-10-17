@@ -4,7 +4,7 @@
     <div class="content">
     <h1>Manager Settings</h1>
 
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    
 
     <main class="l-main">
       <div class="content-wrapper content-wrapper--with-bg">

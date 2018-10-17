@@ -1,16 +1,16 @@
 <template>
   <div class="menu">
     <router-link to="/" class="menu-item">
-      <i class='fa fa-home fa-3x'/>
+      <i class='fa fa-home fa-2x'/>
     </router-link>
     <router-link to="/marketplace" class="menu-item">
-      <i class='fa fa-list fa-3x'/>
+      <i class='fa fa-list fa-2x'/>
     </router-link>
     <router-link to="/settings" class="menu-item">
-      <i class='fa fa-cogs fa-3x'/>
+      <i class='fa fa-cogs fa-2x' />
     </router-link>
     <router-link v-if="manager" to="/manager-settings" class="menu-item">
-      <i class='fa fa-wrench fa-3x'/>
+      <i class='fa fa-wrench fa-2x'/>
     </router-link>
     <div class="menu-item" v-on:click="logout">
       <i class='fa fa-power-off fa-3x'/>
@@ -47,6 +47,7 @@ export default {
   top: 0;
   left: 0;
   background-color: #59B9FF;
+  z-index: 1;
 }
 
 .menu-item {

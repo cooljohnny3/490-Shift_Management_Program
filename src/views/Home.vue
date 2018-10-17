@@ -12,7 +12,7 @@
         </form>
         <datepicker :inline="true" v-model="date" @selected="handleDateChange"/>
       </div>
-      <div>CHART</div>
+      <Chart/> 
       <NotificationButton/>
     </div>
   </div>
@@ -22,12 +22,14 @@
 import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
 import Datepicker from 'vuejs-datepicker';
+import Chart from '@/components/Chart';
 
 export default {
   name: 'Home',
   components: {
     MenuBar,
     Datepicker,
+    Chart,
     NotificationButton
   },
 
@@ -138,24 +140,6 @@ input[type=theirShift]{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 3px rgba(0, 0, 0, 0.1);
     background: #59B9FF;
     border-radius: 15px;
-}
-
-.calender{
-  /* Grid */
-  position: relative;
-  width: 411px;
-  height: 190.85px;
-  left: 1004px;
-  top: 38.15px;
-
-  /* Rectangle 2 */
-  position: absolute;
-  width: 410.01px;
-  height: 190.82px;
-  left: 1004px;
-  top: 38.16px;
-  background: #BBDFF9;
-  border-radius: 15px;
 }
 
 </style>

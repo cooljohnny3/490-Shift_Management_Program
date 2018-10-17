@@ -142,22 +142,4 @@ input[type=theirShift]{
     border-radius: 15px;
 }
 
-.calender{
-  /* Grid */
-  position: relative;
-  width: 411px;
-  height: 190.85px;
-  left: 1004px;
-  top: 38.15px;
-
-  /* Rectangle 2 */
-  position: absolute;
-  width: 410.01px;
-  height: 190.82px;
-  left: 1004px;
-  top: 38.16px;
-  background: #BBDFF9;
-  border-radius: 15px;
-}
-
 </style>

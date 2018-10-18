@@ -110,12 +110,14 @@ router.post('/addlisting', (req, res) => {
 })
 
 router.post('/full-schedule', (req, res) => {
-  db.getSchedule(req.body, (err) => {
-    if (err, results) {
+  console.log(req.body.date);
+  db.getSchedule(req.body.date, (err, results) => {
+    if (err) {
       console.log(err);
       return res.status(500).send('Error on the server.');
     }
-    res.status(200).send({ results });
+    console.log(results);
+    res.status(200).send({ data: results });
   })
 })
 

@@ -1,7 +1,7 @@
 <template>
     <div class="chart">
-      <svg width="500" height="270">
-        <g style="transform: translate(0, 10px)" :d="xAxis"></g>
+      <svg>
+        <g :d="xAxis"></g>
       </svg>
     </div>
 </template>
@@ -13,16 +13,16 @@ export default {
 
   data() {
     this.$http
-      .post("http://localhost:3000/full-schedule", this.date)
+      .post("http://localhost:3000/full-schedule", {date: this.formatDate(this.date)})
       .then(response => {
-        console.log(response);
-        this.data = response;
+        console.log(response.data.data);
+        //this.data = response.data.data;
       })
       .catch(function(error) {
         console.error(error.response);
       });
     return {
-      data: {},
+      data: [],
       xAxis: ''
     }
   },
@@ -32,7 +32,7 @@ export default {
   },
 
   mounted() {
-    this.viewBars();
+    //this.viewBars();
   },
 
   methods: {
@@ -74,46 +74,23 @@ export default {
         .tickFormat(d3.timeFormat("%m/%d"));
         
       this.xAxis.call(xAxis.orient("top"));
-   }
+   },
+
+    formatDate(date) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+
+      return [year, month, day].join('-');
+    }
   },
-};
+}
 </script>
 
 <style scoped>
-.chart {
-  background:white;
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-}
-.rec {
-  background: dodgerblue;
-}
-.axis path {
-  fill: none;
-  stroke: grey;
-  shape-rendering: crispEdges;
-}
-.grid .tick {
-  stroke: lightgrey;
-  opacity: 0.8;
-  stroke-dasharray: 2, 12;
-}
-.grid path {
-  stroke-width: 0;
-}
-rect.times.bar {
-  fill: #006d2c;
-  fill-opacity: 0.5;
-  stroke: #006d2c;
-  stroke-width: 1px;
-}
-.svg{
-  margin: 25px;
-}
-.path{
-  fill: none;
-  stroke: #76BF8A;
-  stroke-width: 3px;
-}
+
 </style>

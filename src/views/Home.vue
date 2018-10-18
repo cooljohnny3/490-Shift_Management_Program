@@ -12,7 +12,7 @@
         </form>
         <datepicker :inline="true" v-model="date" @selected="handleDateChange"/>
       </div>
-      <Chart :date="date"/> 
+      <Grid :data="gridData" :columns="gridColumns" :filterKey="searchQuery"></Grid>
       <NotificationButton/>
     </div>
   </div>
@@ -22,27 +22,66 @@
 import MenuBar from '@/components/MenuBar'
 import NotificationButton from '@/components/NotificationButton'
 import Datepicker from 'vuejs-datepicker';
-import Chart from '@/components/Chart';
+//import Chart from '@/components/Chart';
+import Grid from '@/components/Grid'
 
 export default {
   name: 'Home',
   components: {
     MenuBar,
     Datepicker,
-    Chart,
+    Grid,
     NotificationButton
   },
 
   data() {
     return {
-      date: new Date(),
+      date: '',
+      searchQuery: '',
+      gridColumns: [  
+        'id',
+        'first_name',
+        'last_name',
+        'date',
+        'start_time',
+        'end_time'],
+        gridData: []
     }
+  },
+
+  mounted: function() {
+    this.date = new Date();
+    this.getData();
   },
 
   methods: {
     handleDateChange(date) {
-      console.log(date);
       this.date = date;
+      this.getData();
+    },
+
+    getData() {
+      this.$http
+        .post("http://localhost:3000/full-schedule", {date: this.formatDate(this.date)})
+        .then(response => {
+          console.log(response.data.data);
+          this.gridData = response.data.data;
+        })
+        .catch(function(error) {
+          console.error(error.response);
+        });
+    },
+
+    formatDate(date) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+
+      return [year, month, day].join('-');
     }
   }
 }

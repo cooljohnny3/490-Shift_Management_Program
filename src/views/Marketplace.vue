@@ -50,22 +50,22 @@
       }
   },
 
-  methods: {
-    getRows() {
-      this.$http
-        .post("http://localhost:3000/marketplace", {})
-        .then(response => {
-          let result = [];
-          for(let i of response.data.data) {
-            result.push(i);
-          }
-          this.gridData = result;
-        })
-        .catch(function(error) {
-          console.error(error.response);
-        });
+    methods: {
+      getRows() {
+        this.$http
+          .post("http://localhost:3000/marketplace", {})
+          .then(response => {
+            let result = [];
+            for(let i of response.data.data) {
+              result.push(i);
+            }
+            this.gridData = result;
+          })
+          .catch(function(error) {
+            console.error(error.response);
+          });
+      }
     }
-  }
 	}
 
 </script>

@@ -33,12 +33,6 @@ class Db {
       })
   }
 
-  selectAll(callback) {
-    return this.db.query(`SELECT * FROM users`, function (err, rows) {
-      callback(err, rows)
-    })
-  }
-
   insert(user, callback) {
     return this.db.query(
       'INSERT INTO users (first_name,last_name,email,user_pass) VALUES (?,?,?,?)',
@@ -75,7 +69,7 @@ class Db {
 
   getSchedule(date, callback) {
     return this.db.query(
-      'SELECT * FROM schedule WHERE date=?', date, 
+      'SELECT * FROM schedule WHERE date=?', [date], 
       (err, rows) => {
         callback(err, rows);
       }

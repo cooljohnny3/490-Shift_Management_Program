@@ -78,7 +78,7 @@
             <tr>
               <td>Some shift</td>
               <td>Some shift</td>
-              <td>Nissan</td>
+              <td>Nisan</td>
               <td>09/4/2017</td>
             </tr>
 

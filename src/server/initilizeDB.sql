@@ -39,3 +39,7 @@ INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time
 INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Offer', 'Robert', 'Smith', '2018-10-17', '9:00', '5:00');
 INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Request', 'Susan', 'Filler', '2018-10-17', '9:00', '5:00');
 INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Request', 'Peter', 'What?', '2018-10-17', '9:00', '5:00');
+INSERT INTO schedule (first_name, last_name, date, start_time, end_time) VALUES ('John', 'Brehm', '2018-10-18', '11:00', '12:15');
+INSERT INTO schedule (first_name, last_name, date, start_time, end_time) VALUES ('Peter', 'Brehm', '2018-10-18', '1:00', '3:15');
+INSERT INTO schedule (first_name, last_name, date, start_time, end_time) VALUES ('Robert', 'Smith', '2018-10-19', '11:00', '12:15');
+INSERT INTO schedule (first_name, last_name, date, start_time, end_time) VALUES ('Chris', 'Black', '2018-10-19', '1:00', '3:15');

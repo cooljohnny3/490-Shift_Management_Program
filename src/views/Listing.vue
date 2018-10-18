@@ -84,6 +84,7 @@ export default {
         .post("http://localhost:3000/addlisting", data)
         .then(response => {
           console.log(response);
+          this.$router.push("/marketplace");
         })
         .catch(function(error) {
           console.error(error.response);
@@ -105,6 +106,7 @@ export default {
         .post("http://localhost:3000/addlisting", data)
         .then(response => {
           console.log(response);
+          this.$router.push("/marketplace");
         })
         .catch(function(error) {
           console.error(error.response);

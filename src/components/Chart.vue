@@ -1,9 +1,7 @@
 <template>
-    <div id="viz">
-      <svg class = "svg" width="500" height="270">
-        <g class = "g" style="transform: translate(0, 10px)">
-          <path class="path" :d="line" />
-        </g>
+    <div class="chart">
+      <svg width="500" height="270">
+        <g style="transform: translate(0, 10px)" :d="xAxis"></g>
       </svg>
     </div>
 </template>
@@ -12,74 +10,71 @@ const d3 = require("d3");
 
 export default {
   name: "Chart",
-  /*data() {
-    return {
-      data: [
-        {
-          firstName: "Employee",
-          lastName: "1",
-          date: "2018-10-03",
-          startTime: "9:00",
-          endTime: "17:00"
-        },
-        {
-          firstName: "Employee",
-          lastName: "2",
-          date: "2018-10-03",
-          startTime: "9:00",
-          endTime: "17:00"
-        },
-        {
-          firstName: "Employee",
-          lastName: "3",
-          date: "2018-10-03",
-          startTime: "10:00",
-          endTime: "18:00"
-        },
-        {
-          firstName: "Employee",
-          lastName: "4",
-          date: "2018-10-03",
-          startTime: "13:00",
-          endTime: "21:00"
-        },
-        {
-          firstName: "Employee",
-          lastName: "5",
-          date: "2018-10-03",
-          startTime: "14:00",
-          endTime: "22:00"
-        }
-      ],
-      line: ""
-    };
-  }, */
+
   data() {
+    this.$http
+      .post("http://localhost:3000/full-schedule", this.date)
+      .then(response => {
+        console.log(response);
+        this.data = response;
+      })
+      .catch(function(error) {
+        console.error(error.response);
+      });
     return {
-      data: [99, 71, 78, 25, 36, 92],
-      line: '',
-    };
+      data: {},
+      xAxis: ''
+    }
   },
+
+  props: {
+    date: Date,
+  },
+
   mounted() {
-    this.calculatePath();
+    this.viewBars();
   },
+
   methods: {
-    getScales() {
-      const x = d3.scaleTime().range([0, 430]);
-      const y = d3.scaleLinear().range([210, 0]);
-      d3.axisLeft().scale(x);
-      d3.axisBottom().scale(y);
-      x.domain(d3.extent(this.data, (d, i) => i));
-      y.domain([0, d3.max(this.data, d => d)]);
-      return { x, y };
-    },
-    calculatePath() {
-      const scale = this.getScales();
-      const path = d3.line()
-        .x((d, i) => scale.x(i))
-        .y(d => scale.y(d));
-      this.line = path(this.data);
-    },
+    viewBars () {
+    var first = d3.timeDay.floor( new Date(this.data[0].start)),
+        last = d3.timeDay.ceil( new Date(this.data[this.data.length-1].stop)),
+        dRange = [d3.min(this.data,function(d){
+                    return d3.timeDay.floor(new Date(d.start))}), 
+                  d3.max(this.data,function(d){
+                    return d3.timeDay.ceil(new Date(d.stop))})];
+			
+		var m = {top: 40, right: 20, bottom: 20, left: 60},
+        width = window.innerWidth*.8,
+        barSize = 25,
+        height = ((dRange[1]-dRange[0])/(24*60*60*1000))* barSize;
+      /* set up scales */
+			var x = d3.time.scale()		
+				.domain([0,24])
+				.range([0, width]);
+			
+			var y =d3.time.scale()
+				.domain(dRange)
+				.range([0, height]);
+
+			var tfh = d3.time.scale()	//TwentyFourHour scale
+				.domain([d3.timeHour(new Date(2014,0,1,0,0,0)),
+					d3.time.hour(new Date(2014,0,2,0,0,0)),])
+				.range([0,width]);
+        /*add axes and grid*/
+			var xAxis = d3.svg.axis()
+				.scale(tfh)
+				.tickFormat(d3.timeFormat("%H:%M"));
+			var xGrid = d3.svg.axis()
+				.scale(tfh)
+				.orient("bottom")
+				.ticks(12);
+			var yAxis = d3.svg.axis()
+				.scale(y)
+        .tickFormat(d3.timeFormat("%m/%d"));
+        
+      this.xAxis.call(xAxis.orient("top"));
+   }
   },
 };
 </script>

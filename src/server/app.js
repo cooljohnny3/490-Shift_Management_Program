@@ -109,6 +109,16 @@ router.post('/addlisting', (req, res) => {
   })
 })
 
+router.post('/full-schedule', (req, res) => {
+  db.getSchedule(req.body, (err) => {
+    if (err, results) {
+      console.log(err);
+      return res.status(500).send('Error on the server.');
+    }
+    res.status(200).send({ results });
+  })
+})
+
 app.use(router);
 
 let port = process.env.PORT || 3000;

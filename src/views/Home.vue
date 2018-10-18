@@ -12,7 +12,7 @@
         </form>
         <datepicker :inline="true" v-model="date" @selected="handleDateChange"/>
       </div>
-      <Chart/> 
+      <Chart :date="date"/> 
       <NotificationButton/>
     </div>
   </div>

@@ -58,8 +58,8 @@ class Db {
   marketplace(callback) {
     return this.db.query(
       'SELECT * FROM marketplace',
-      (err, results) => {
-        callback(err, results);
+      (err, rows) => {
+        callback(err, rows);
       }
     )
   }
@@ -69,6 +69,15 @@ class Db {
       'INSERT INTO marketplace (type,first_name,last_name,date,start_time,end_time) VALUES (?,?,?,?,?,?)',
       entry, (err) => {
         callback(err);
+      }
+    )
+  }
+
+  getSchedule(date, callback) {
+    return this.db.query(
+      'SELECT * FROM schedule WHERE date=?', date, 
+      (err, rows) => {
+        callback(err, rows);
       }
     )
   }

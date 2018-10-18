@@ -17,51 +17,75 @@
             <label for="">Confirm New Password
               <input type="text" name="" id=""><br>
             </label>
+            <button type="save">Save Changes</button><br>
+
             </div>
           </details> 
         </li>
         <li> <details>
             <summary>Change Profile Picture</summary>
+
             <div class="settingContent">
-            <label for="">Current Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">New Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">Confirm New Password
-              <input type="text" name="" id=""><br>
-            </label>
+
+              <form>
+                <input type="file" name="pic" accept="image/*">
+               <button type="submit">Submit</button><br>
+              </form>
+
             </div>
           </details> 
-           </li>
+        </li>
         <li> <details>
             <summary>Notification Settings</summary>
             <div class="settingContent">
-            <label for="">Current Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">New Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">Confirm New Password
-              <input type="text" name="" id=""><br>
-            </label>
+            
+              <input type="checkbox" name="mail" value="Mail"> Recieve Mail Notifications<br>
+           
+              <input type="checkbox" name="messages" value="messages"> Recieve Messages Notifications<br>
+            
+              <input type="checkbox" name="offers" value="Offers"> Recieve Offers Notifications<br>
+
+              <input type="checkbox" name="requests" value="Requests"> Recieve Requests Notifications<br>
+
+              <button type="save">Save</button><br>
             </div>
           </details>  
           </li>
         <li> <details>
             <summary>Trade History</summary>
             <div class="settingContent">
-            <label for="">Current Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">New Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">Confirm New Password
-              <input type="text" name="" id=""><br>
-            </label>
+            
+            <table style="width:100%">
+            <tr>
+              <th>My Shift</th>
+              <th>Their Shift</th> 
+              <th>Name of Person</th>
+              <th>Trade Date</th>
+            </tr>
+
+            <tr>
+              <td>Some shift</td>
+              <td>Some shift</td>
+              <td>Eddie</td>
+              <td>02/17/2018</td>
+            </tr>
+            <tr>
+              <td>Some shift</td>
+              <td>Some shift</td>
+              <td>Johny</td>
+              <td>01/2/2018</td>
+            </tr>
+            <tr>
+              <td>Some shift</td>
+              <td>Some shift</td>
+              <td>Nissan</td>
+              <td>09/4/2017</td>
+            </tr>
+
+          </table>
+
+          <button type="clear">Clear Trade History</button><br>
+
             </div>
           </details>  
           </li>

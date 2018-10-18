@@ -350,7 +350,6 @@ export default {
     handleDeleteEmployee(e) {
       e.preventDefault();
       if(this.deleteEmail.length > 0 && this.deleteAdminPassword.length > 0) {
-        console.log(JSON.parse(localStorage.getItem('user')).is_admin);
         let data = {
           isAdmin: JSON.parse(localStorage.getItem('user')).is_admin,
           email: this.deleteEmail,

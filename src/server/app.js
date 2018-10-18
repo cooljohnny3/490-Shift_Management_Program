@@ -32,8 +32,11 @@ router.post('/register', function(req, res) {
       bcrypt.hashSync(req.body.password, 8)
   ],
   function (err) {
-      if (err) return res.status(500).send("There was a problem registering the user.")
-      res.status(200).send();
+    if (err) {
+      console.log(err);
+      return res.status(500).send('Error on the server.');
+    }
+    res.status(200).send();
   }); 
 });
 
@@ -44,29 +47,37 @@ router.post('/register-admin', function(req, res) {
       req.body.email,
       bcrypt.hashSync(req.body.password, 8),
       1
-  ],
-  function (err) {
-      if (err) return res.status(500).send("There was a problem registering the user.")
-      res.status(200).send();
+  ],(err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send('Error on the server.');
+    }
+    res.status(200).send();
   }); 
 });
 
 router.post('/login', (req, res) => {
   db.selectByEmail(req.body.email, (err, user) => {
-      if (err) return res.status(500).send('Error on the server.');
-      if (!user) return res.status(404).send('No user found.');
-      let passwordIsValid = bcrypt.compareSync(req.body.password, user.user_pass);
-      if (!passwordIsValid) return res.status(401).send({ auth: false, token: null });
-      let token = jwt.sign({ id: user.id }, config.secret, { expiresIn: 86400 // expires in 24 hours
-      });
-      res.status(200).send({ auth: true, token: token, user: user });
+    if (err) {
+      console.log(err);
+      return res.status(500).send('Error on the server.');
+    }
+    if (!user) return res.status(404).send('No user found.');
+    let passwordIsValid = bcrypt.compareSync(req.body.password, user.user_pass);
+    if (!passwordIsValid) return res.status(401).send({ auth: false, token: null });
+    let token = jwt.sign({ id: user.id }, config.secret, { expiresIn: 86400 // expires in 24 hours
+    });
+    res.status(200).send({ auth: true, token: token, user: user });
   });
 })
 
 router.post('/delete', (req, res) => {
   if(req.body.isAdmin != 1) { return res.status(401).send('Unauthorized.') }
   db.delete(req.body.email, (err, result) => {
-    if (err) return res.status(500).send('Error on the server.');
+    if (err) {
+      console.log(err);
+      return res.status(500).send('Error on the server.');
+    }
     if (result.affectedRows == 0) return res.status(404).send('No user found.');
     res.status(200).send();
   })
@@ -74,8 +85,27 @@ router.post('/delete', (req, res) => {
 
 router.post('/marketplace', (req, res) => {
   db.marketplace((err, results) => {
-    if (err) return res.status(500).send('Error on the server.');
+    if (err) {
+      console.log(err);
+      return res.status(500).send('Error on the server.');
+    }
     res.status(200).send({ data: results });
+  })
+})
+
+router.post('/addlisting', (req, res) => {
+  db.addListing([req.body.type,
+      req.body.first_name,
+      req.body.last_name,
+      req.body.date,
+      req.body.start_time,
+      req.body.end_time
+    ], (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send('Error on the server.');
+    }
+    res.status(200).send();
   })
 })
 

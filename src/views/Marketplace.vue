@@ -5,9 +5,7 @@
     <div class="content">
       <h1>Marketplace</h1>
 
-      <form id="search">
-        Search <input name="query" v-model="searchQuery">
-      </form>
+      Search <input name="query" v-model="searchQuery">
       
       <Grid :data="gridData" :columns="gridColumns" :filterKey="searchQuery"></Grid>
 

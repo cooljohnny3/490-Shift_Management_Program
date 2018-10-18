@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS schedule (
 
 INSERT INTO users (first_name,email,user_pass,is_admin) VALUES ('admin', 'admin', '$2a$08$gaARy0Azr3lgf0BB6YkQ1ORobCasZIwBXQebAd2C8KedSyBJ6vZPC', 1);
 INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Offer', 'John', 'Brehm', '2018-10-17', '9:00', '5:00');
-INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Offer', 'John', 'Brehm', '2018-10-17', '9:00', '5:00');
-INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Offer', 'John', 'Brehm', '2018-10-17', '9:00', '5:00');
-INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Request', 'John', 'Brehm', '2018-10-17', '9:00', '5:00');
-INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Request', 'John', 'Brehm', '2018-10-17', '9:00', '5:00');
+INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Offer', 'Chris', 'Name', '2018-10-17', '9:00', '5:00');
+INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Offer', 'Robert', 'Smith', '2018-10-17', '9:00', '5:00');
+INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Request', 'Susan', 'Filler', '2018-10-17', '9:00', '5:00');
+INSERT INTO marketplace (type, first_name, last_name, date, start_time, end_time) VALUES ('Request', 'Peter', 'What?', '2018-10-17', '9:00', '5:00');

@@ -63,6 +63,15 @@ class Db {
       }
     )
   }
+
+  addListing(entry, callback) {
+    return this.db.query(
+      'INSERT INTO marketplace (type,first_name,last_name,date,start_time,end_time) VALUES (?,?,?,?,?,?)',
+      entry, (err) => {
+        callback(err);
+      }
+    )
+  }
 }
 
 module.exports = Db

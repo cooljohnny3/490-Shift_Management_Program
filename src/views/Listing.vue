@@ -15,60 +15,115 @@
         <div class="grid">
             <div id="offer" v-if="!checked">
                 <h3>Offer a shift</h3>
-                Date of shift:
-                <input type=text v-model="fillDate" placeholder="MM/DD/YYYY">
-                <button>Submit</button>
+                <label>Date of shift:</label>
+                <input type=text v-model="fillDate" placeholder="MM/DD/YYYY"><br>
+                <label>Start of shift:</label>
+                <input type="text" v-model="startTime" placeholder="00:00"><br>
+                <label>End of shift:</label>
+                <input type="text" v-model="endTime" placeholder="24:00"><br>
+                <button v-on:click="handleNewOffer">Submit</button>
             </div>
             <div id = "request" v-else>
                 <h3>Request a shift</h3>
-                Date of shift:
-                <input type=text  v-model="fillDate" placeholder="MM/DD/YYYY">
-                <br>Earliest the shift can start: 
-                <input type=text placeholder="00:00">
-                <br> Latest the shift can end: 
-                <input type=text placeholder="24:00">
-                <button>Submit</button>
+                <label>Date of shift:</label>
+                <input type=text  v-model="fillDate" placeholder="MM/DD/YYYY"><br>
+                <label>Earliest the shift can start:</label>
+                <input type=text v-model="startTime" placeholder="00:00"><br>
+                 <label>Latest the shift can end:</label>
+                <input type=text v-model="endTime" placeholder="24:00"><br>
+                <button v-on:click="handleNewRequest">Submit</button>
             </div>
             <div class="chart">
                 <datepicker :inline="true" v-model="date" @selected="handleDateChange" id="offerDate"/>
             </div>
         </div>
+        <Chart/>
     </div>
   </div>
 </template>
 
-
-
-
 <script>
 import MenuBar from "@/components/MenuBar";
 import Datepicker from 'vuejs-datepicker';
-
+import Chart from '@/components/Chart'
 
 export default {
   name: "Listing",
   components: {
     MenuBar,
-    Datepicker
+    Datepicker,
+    Chart
   },
 
   data() {
       return {
         checked: false,
+        startTime: '',
+        endTime: '',
         date: new Date(),
         fillDate: (new Date()).toLocaleDateString("en-US")
       }
   },
     methods: {
     handleDateChange(date) {
-      console.log(date.toLocaleDateString("en-US"));
       this.fillDate = date.toLocaleDateString("en-US");
-    }
+    },
+
+    handleNewOffer(e) {
+      e.preventDefault();
+      let user = JSON.parse(localStorage.getItem('user'));
+      let data = {
+        type: 'Offer',
+        first_name: user.first_name,
+        last_name: user.last_name,
+        date: this.formatDate(this.date),
+        start_time: this.startTime,
+        end_time: this.endTime
+      }
+      this.$http
+        .post("http://localhost:3000/addlisting", data)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.error(error.response);
+        });
+    },
+
+    handleNewRequest(e) {
+      e.preventDefault();
+      let user = JSON.parse(localStorage.getItem('user'));
+      let data = {
+        type: 'Request',
+        first_name: user.first_name,
+        last_name: user.last_name,
+        date: this.formatDate(this.date),
+        start_time: this.startTime,
+        end_time: this.endTime
+      }
+      this.$http
+        .post("http://localhost:3000/addlisting", data)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.error(error.response);
+        });
+    },
+
+    formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
   }
 }
-
-
-
 </script>
 
 <style>

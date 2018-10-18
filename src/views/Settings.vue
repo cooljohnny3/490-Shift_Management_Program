@@ -17,24 +17,24 @@
             <label for="">Confirm New Password
               <input type="text" name="" id=""><br>
             </label>
+            <button type="save">Save Changes</button><br>
+
             </div>
           </details> 
         </li>
         <li> <details>
             <summary>Change Profile Picture</summary>
+
             <div class="settingContent">
-            <label for="">Current Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">New Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">Confirm New Password
-              <input type="text" name="" id=""><br>
-            </label>
+
+              <form>
+                <input type="file" name="pic" accept="image/*">
+               <button type="submit">Submit</button><br>
+              </form>
+
             </div>
           </details> 
-           </li>
+        </li>
         <li> <details>
             <summary>Notification Settings</summary>
             <div class="settingContent">
@@ -47,7 +47,7 @@
 
               <input type="checkbox" name="requests" value="Requests"> Recieve Requests Notifications<br>
 
-              <button type="save">Save</button>
+              <button type="save">Save</button><br>
             </div>
           </details>  
           </li>
@@ -84,7 +84,7 @@
 
           </table>
 
-          <button type="clear">Clear Trade History</button>
+          <button type="clear">Clear Trade History</button><br>
 
             </div>
           </details>  

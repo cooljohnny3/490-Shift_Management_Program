@@ -54,6 +54,15 @@ class Db {
         callback(err, result);
       })
   }
+
+  marketplace(callback) {
+    return this.db.query(
+      'SELECT * FROM marketplace',
+      (err, results) => {
+        callback(err, results);
+      }
+    )
+  }
 }
 
 module.exports = Db

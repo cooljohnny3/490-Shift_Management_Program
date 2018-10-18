@@ -3,65 +3,17 @@
     <MenuBar/>
 
     <div class="content">
+      <h1>Marketplace</h1>
 
-		<h1>Marketplace</h1>
+      <form id="search">
+        Search <input name="query" v-model="searchQuery">
+      </form>
+      
+      <Grid :data="gridData" :columns="gridColumns" :filterKey="searchQuery"></Grid>
 
-		<table id="listingtable" style="width:90%">
-		<tr>
-			<th>Type</th>
-			<th>First Name</th> 
-			<th>Last Name</th>
-			<th>Day</th>
-			<th>Date</th>
-			<th>Start Time</th>
-			<th>End Time</th>
-			<th>Send Request</th>
-		</tr>
-		<tr>
-			<td>Request</td>
-			<td>Employee</td>
-			<td>1</td> 
-			<td>Monday</td>
-			<td>10/15/2018</td>
-			<td>2:00 PM</td>
-			<td>9:00 PM</td>
-			<td>Give</td>
-		</tr>
-		<tr>
-			<td>Request</td>
-			<td>Employee</td>
-			<td>2</td> 
-			<td>Tuesday</td>
-			<td>10/16/2018</td>
-			<td>9:00 AM</td>
-			<td>5:00 PM</td>
-			<td>Give</td>
-		</tr>
-		<tr>
-			<td>Offer</td>
-			<td>Employee</td>
-			<td>3</td> 
-			<td>Wednesday</td>
-			<td>10/17/2018</td>
-			<td>2:00 PM</td>
-			<td>9:00 PM</td>
-			<td>Take</td>
-		</tr>
-		<tr>
-			<td>Offer</td>
-			<td>Employee</td>
-			<td>4</td> 
-			<td>Thursday</td>
-			<td>10/18/2018</td>
-			<td>5:00 PM</td>
-			<td>9:00 PM</td>
-			<td>Take</td>
-		</tr>
-	</table>
-
-	<router-link to="listing">
-		<button id="newlisting" class="button">New Listing</button>
-	</router-link>
+      <router-link to="listing">
+        <button id="newlisting" class="button">New Listing</button>
+      </router-link>
 
 	<NotificationButton/>
 	</div>
@@ -71,7 +23,8 @@
 <script>
 
 	import MenuBar from '@/components/MenuBar'
-	import NotificationButton from '@/components/NotificationButton'
+  import NotificationButton from '@/components/NotificationButton'
+  import Grid from '@/components/Grid'
 
 	export default
 	{
@@ -79,14 +32,47 @@
 		components:
 		{
 			MenuBar,
-			NotificationButton
-		}
+      NotificationButton,
+      Grid
+    },
+    
+    data() {
+      this.getRows();
+      return {
+        searchQuery: '',
+        gridColumns: [  
+          'id',   
+          'type',
+          'first_name',
+          'last_name',
+          'date',
+          'start_time',
+          'end_time'],
+          gridData: []
+      }
+  },
+
+  methods: {
+    getRows() {
+      this.$http
+        .post("http://localhost:3000/marketplace", {})
+        .then(response => {
+          let result = [];
+          for(let i of response.data.data) {
+            result.push(i);
+          }
+          this.gridData = result;
+        })
+        .catch(function(error) {
+          console.error(error.response);
+        });
+    }
+  }
 	}
 
 </script>
 
 <style scoped>
-
 	#listingtable
 	{
 		position: absolute;

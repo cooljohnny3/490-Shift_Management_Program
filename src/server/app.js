@@ -72,6 +72,13 @@ router.post('/delete', (req, res) => {
   })
 })
 
+router.post('/marketplace', (req, res) => {
+  db.marketplace((err, results) => {
+    if (err) return res.status(500).send('Error on the server.');
+    res.status(200).send({ data: results });
+  })
+})
+
 app.use(router);
 
 let port = process.env.PORT || 3000;

@@ -1,400 +1,295 @@
 <template>
   <div class="manager-settings">
-    <MenuBar/>
+    <MenuBar />
     <h1>Manager Settings</h1>
+    <main class="l-main">
+      <div class="content-wrapper content-wrapper--with-bg">
 
- 
-<main class="l-main">
-  <div class="content-wrapper content-wrapper--with-bg">
-    
-    <div class="container">
-	<form class="form-horizontal">
-<fieldset>
+        <div class="container">
+          <form class="form-horizontal">
+            <fieldset>
+              <legend>Hours Settings:</legend>
 
-    
+              <div class="form-group">
+                <label for="regno" class="col-md-4 control-label">Max Hours per day</label>
+                <div class="col-md-2">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus"
+                        data-field="quant[1]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                      </button>
+                    </span>
+                    <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-<!-- Form Name -->
-<legend>Employee Details:</legend>
+              <div class="form-group">
+                <label for="regno" class="col-md-4 control-label">Min Hours per day</label>
+                <div class="col-md-2">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus"
+                        data-field="quant[1]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                      </button>
+                    </span>
+                    <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="displayname">Name:</label>  
-  <div class="col-md-6">
-  <input id="displayname" name="displayname" type="text" placeholder="Please enter an employee name " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
+              <div class="form-group">
+                <label for="regno" class="col-md-4 control-label">Max Hours per week</label>
+                <div class="col-md-2">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus"
+                        data-field="quant[1]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                      </button>
+                    </span>
+                    <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-<!-- Prepended text-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="designation">Designation</label>
-    <div class="col-md-6">
-        <select id="designation" name="designation" class="form-control">
-            <option value="Director">Director</option>
-            <option value="ProductHead">Product Head</option>
-            <option value="GeneralManager">General Manager</option>
-            <option value="ProductManager">Product Manager</option>
-            <option value="TeamLead">Team Lead</option>
-        </select>
-    </div>
-</div>
-<div class="form-group">
-  <label class="col-md-4 control-label" for="department">Department</label>
-  <div class="col-md-6">
-    <select id="department" name="department" class="form-control">
-      <option value="Accounts">Accounts</option>
-      <option value="HR">HR</option>
-      <option value="Finance">Finance</option>
-      <option value="Loan">Loan</option>
-    </select>
-  </div>
-</div>
+              <div class="form-group">
+                <label for="regno" class="col-md-4 control-label">Min Hours per week</label>
+                <div class="col-md-2">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus"
+                        data-field="quant[1]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                      </button>
+                    </span>
+                    <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
 
-<!-- Text input-->
-<div class="form-group">
-    <label class="col-md-4 control-label" for="publickey">Employee Key</label>
-    <div class="col-md-4">
-      <div class="input-group input-file" name="publickey">
-          <input type="text" class="form-control" placeholder='Enter ID' />			
-          <span class="input-group-btn">
-          <button class="btn btn-default btn-choose" type="button">Submit</button>
-          </span>
-      </div>
-	</div>
-</div>
-<br/>
-
-<legend>Hours Settings:</legend>
-   
-   <div class="form-group">
-    <label for="regno" class="col-md-4 control-label">Max Hours per day</label>
-    <div class="col-md-2">
-        <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
-    </div>
-</div>
-    
-    
-    <div class="form-group">
-    <label for="regno" class="col-md-4 control-label">Min Hours per day</label>
-    <div class="col-md-2">
-        <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
-    </div>
-</div>
-    
-    <div class="form-group">
-    <label for="regno" class="col-md-4 control-label">Max Hours per week</label>
-    <div class="col-md-2">
-        <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
-    </div>
-</div>
-    
-    <div class="form-group">
-    <label for="regno" class="col-md-4 control-label">Min Hours per week</label>
-    <div class="col-md-2">
-        <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                  <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
-    </div>
-</div>
-   
-   
-<div class="form-group">
-    <label for="regno" class="col-md-4 control-label">Schedule beginning:</label>
-    <div class="col-md-2">
-        <input id="lastdate" name="lastdate" type="date" placeholder="Please enter a display name " class="form-control input-md" required="">
-    </div>
-</div>
-    
-<div class="form-group">
-    <label for="regno" class="col-md-4 control-label">Schedule end:</label>
-    <div class="col-md-2">
-        <input id="lastdate" name="lastdate" type="date" placeholder="Please enter a display name " class="form-control input-md" required="">
-    </div>
-</div>
-</fieldset>
-</form>
-
-<legend>Create new Employee:</legend>
-<br>
-<br>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Name:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Please enter an employee name " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<!-- Prepended text-->
-<div class="form-group">
-  <label class="col-md-1 control-label" for="designation">Designation</label>
-    <div class="col-md-4">
-        <select id="designation" name="designation" class="form-control">
-            <option value="Director">Director</option>
-            <option value="ProductHead">Product Head</option>
-            <option value="GeneralManager">General Manager</option>
-            <option value="ProductManager">Product Manager</option>
-            <option value="TeamLead">Team Lead</option>
-        </select>
-    </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="department">Department</label>
-  <div class="col-md-4">
-    <select id="department" name="department" class="form-control">
-      <option value="Accounts">Accounts</option>
-      <option value="HR">HR</option>
-      <option value="Finance">Finance</option>
-      <option value="Loan">Loan</option>
-    </select>
-  </div>
-</div>
-<br>
-<br>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Employee Key:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Enter ID: " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Email</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="you@email.com " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Confirm Email:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Re-enter Email adress " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Password::</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="set new password " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Confirm Password:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Re-Enter Password " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<div class="control-group">
+              <div class="control-group">
+                <label class="control-label" for="singlebutton"></label>
+                <div class="controls">
+                  <button id="singlebutton" name="singlebutton" class="btn btn-info">Update</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+          <br>
+          <legend>Create new Employee:</legend>
+          <br>
+          <br>
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">First Name:</label>
+            <div class="col-md-4">
+              <input id="firstname" name="firstname" type="text" placeholder="First Name" class="form-control input-md" v-model="newFirstName">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Last Name:</label>
+            <div class="col-md-4">
+              <input id="lastname" name="lastname" type="text" placeholder="Last Name" class="form-control input-md" v-model="newLastName">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <!-- Prepended text-->
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="designation">Designation</label>
+            <div class="col-md-4">
+              <select id="designation" name="designation" class="form-control">
+                <option value="Director">Director</option>
+                <option value="ProductHead">Product Head</option>
+                <option value="GeneralManager">General Manager</option>
+                <option value="ProductManager">Product Manager</option>
+                <option value="TeamLead">Team Lead</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="department">Department</label>
+            <div class="col-md-4">
+              <select id="department" name="department" class="form-control">
+                <option value="Accounts">Accounts</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <option value="Loan">Loan</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Email</label>
+            <div class="col-md-4">
+              <input id="displayname" name="displayname" type="text" placeholder="you@email.com " class="form-control input-md" v-model="newEmail">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Confirm Email:</label>
+            <div class="col-md-4">
+              <input id="displayname" name="displayname" type="text" placeholder="Re-enter Email adress " class="form-control input-md">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Password::</label>
+            <div class="col-md-4">
+              <input id="displayname" name="displayname" type="password" placeholder="set new password " class="form-control input-md" v-model="newPassword">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Confirm Password:</label>
+            <div class="col-md-4">
+              <input id="displayname" name="displayname" type="password" placeholder="Re-Enter Password " class="form-control input-md">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <div class="box2">
+            <!-- Rounded switch -->
+            <h4>Admin </h4>
+            <label class="switch">
+              <input id="checkbox" name="checkbox" type="checkbox" v-model="isAdmin" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="control-group">
             <label class="control-label" for="singlebutton"></label>
             <div class="controls">
-                 <button id="singlebutton" name="singlebutton" class="btn btn-info">Submit</button>
+              <button id="singlebutton" name="singlebutton" class="btn btn-info" v-on:click="handleNewEmployee">Submit</button>
             </div>
-        </div> 
+            <p v-show="addedUser">User Added Successfully</p>
+          </div>
+          <br>
+          <br>
 
-<br>
-<br>
-<br>
-<br>
-<legend>Delete Employee Account:</legend>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Name:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Please enter an employee name " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Email:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Re-enter Email adress " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Employee Key:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Enter ID: " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Administrator Password:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="Enter Password " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<div class="control-group">
-  <label class="control-label" for="singlebutton"></label>
-  <div class="controls">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info">Delete</button>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<legend>Password Settings:</legend>
 
-		<div class="col-sm-4">
-        <label>Current Password</label>
-          <div class="form-group pass_show"> 
-                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Current Password"> 
-            </div> 
-          <label>New Password</label>
-            <div class="form-group pass_show"> 
-                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="New Password"> 
-            </div> 
-          <label>Confirm Password</label>
-            <div class="form-group pass_show"> 
-                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Confirm Password"> 
-            </div> 
-            
-		</div> 
-        <div class="control-group">
+          <legend>Delete Employee Account:</legend>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Email:</label>
+            <div class="col-md-4">
+              <input id="displayname" name="displayname" type="text" placeholder="Email adress " class="form-control input-md" v-model="deleteEmail">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Administrator Password:</label>
+            <div class="col-md-4">
+              <input id="displayname" name="displayname" type="password" placeholder="Enter Password " class="form-control input-md" v-model="deleteAdminPassword">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <div class="control-group">
             <label class="control-label" for="singlebutton"></label>
             <div class="controls">
-                 <button id="singlebutton" name="singlebutton" class="btn btn-info">Update</button>
+              <button id="singlebutton" name="singlebutton" class="btn btn-info" v-on:click="handleDeleteEmployee">Delete</button>
             </div>
-        </div> 
-<legend> </legend>
+          </div>
+          <p v-show="deletedUser">User Deleted Successfully</p>
+          <br>
+          <br>
+        
+          <legend>Feature Toggle</legend>
 
-<div class ="box1">    
+          <div class="box1">
             <!-- Rounded switch -->
             <h2>MarketPlace </h2>
             <label class="switch">
-            <input id="checkbox" name="checkbox" type="checkbox" v-model="checked"/>
-            <span class="slider round"></span>
+              <input id="checkbox" name="checkbox" type="checkbox" v-model="marketChecked" />
+              <span class="slider round"></span>
             </label>
-            
-        </div>
+          </div>
 
-<div class ="box2">    
+          <div class="box2">
             <!-- Rounded switch -->
             <h2>Trading </h2>
             <label class="switch">
-            <input id="checkbox" name="checkbox" type="checkbox" v-model="checked"/>
-            <span class="slider round"></span>
+              <input id="checkbox" name="checkbox" type="checkbox" v-model="tradeChecked" />
+              <span class="slider round"></span>
             </label>
-            
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="singlebutton"></label>
+            <div class="controls">
+              <button id="singlebutton" name="singlebutton" class="btn btn-info">Update</button>
+            </div>
+          </div>
+          <br>
+          <br>
+
+          <legend> Upload Schedule:</legend>
+          <div class="form-group">
+            <label class="col-md-1 control-label" for="displayname">Title:</label>
+            <div class="col-md-4">
+              <input id="displayname" name="displayname" type="text" placeholder="file name: " class="form-control input-md"
+                required="">
+              <span class="help-block"></span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <!-- File Button -->
+          <div class="control-group">
+            <label class="control-label" for="filebutton"></label>
+            <div class="controls">
+              <input id="filebutton" name="filebutton" class="input-file" type="file">
+            </div>
+          </div>
+          <br>
+          <!-- Button -->
+          <div class="control-group">
+            <label class="control-label" for="singlebutton"></label>
+            <div class="controls">
+              <button id="singlebutton" name="singlebutton" class="btn btn-info">Upload</button>
+            </div>
+          </div>
+          <br>
         </div>
-
-<legend> Upload Schedule:</legend>        
-
-
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Title:</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="file name: " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<div class="form-group">
-  <label class="col-md-1 control-label" for="displayname">Description</label>  
-  <div class="col-md-4">
-  <input id="displayname" name="displayname" type="text" placeholder="  " class="form-control input-md" required="">
-  <span class="help-block"></span>  
-  </div>
-</div>
-<br>
-<br>
-<!-- File Button --> 
-<div class="control-group">
-  <label class="control-label" for="filebutton"></label>
-  <div class="controls">
-    <input id="filebutton" name="filebutton" class="input-file" type="file">
-  </div>
-</div>
-<br>
-<!-- Button -->
-<div class="control-group">
-  <label class="control-label" for="singlebutton"></label>
-  <div class="controls">
-    <button id="singlebutton" name="singlebutton" class="btn btn-info">Upload</button>
-  </div>
-</div>
-
-
-
-<br/>
-</div>
-  </div>
-</main>
-
-           
+      </div>
+    </main>
   </div>
 </template>
 
@@ -409,8 +304,80 @@ export default {
 
   data() {
     return {
-      checked: false
+      newFirstName: "",
+      newLastName: "",
+      newEmail: "",
+      newPassword: "",
+      isAdmin: false,
+      addedUser: false,
+      deleteEmail: "",
+      deleteAdminPassword: "",
+      deletedUser: false,
+      marketChecked: false,
+      tradeChecked: false,
+    };
+  },
+
+  methods: {
+    handleNewEmployee(e) {
+      e.preventDefault();
+      if(this.newPassword.length > 0) {
+        let path = "http://localhost:3000/"
+        let data = {
+          firstname: this.newFirstName,
+          lastname: this.newLastName,
+          email: this.newEmail,
+          password: this.newPassword
+        }
+        if(this.isAdmin) {
+          path += "register-admin";
+          data.isAdmin = 1;
+        } else {
+          path += "register";
+        }
+        this.$http
+          .post(path, data)
+          .then(response => {
+            console.log(response);
+            this.addedUser = true;
+          })
+          .catch(function(error) {
+            console.error(error.response);
+          });
+      }
+    },
+
+    handleDeleteEmployee(e) {
+      e.preventDefault();
+      if(this.deleteEmail.length > 0 && this.deleteAdminPassword.length > 0) {
+        console.log(JSON.parse(localStorage.getItem('user')).is_admin);
+        let data = {
+          isAdmin: JSON.parse(localStorage.getItem('user')).is_admin,
+          email: this.deleteEmail,
+          password: this.deleteAdminPassword
+        }
+        this.$http
+          .post("http://localhost:3000/delete", data)
+          .then(response => {
+            console.log(response);
+            this.deletedUser = true;
+          })
+          .catch(function(error) {
+            console.error(error.response);
+          });
+      }
     }
   }
 }
 </script>
+
+<style scoped>
+.box1 {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.box2 {
+  display: inline-block;
+}
+</style>

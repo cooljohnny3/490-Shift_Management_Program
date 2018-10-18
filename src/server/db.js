@@ -46,6 +46,14 @@ class Db {
         callback(err)
       })
   }
+
+  delete(email, callback) {
+    return this.db.query(
+      'DELETE FROM users WHERE email=\'' + email + '\'',
+      (err, result) => { 
+        callback(err, result);
+      })
+  }
 }
 
 module.exports = Db

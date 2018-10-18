@@ -26,18 +26,14 @@ app.use(allowCrossDomain)
 
 router.post('/register', function(req, res) {
   db.insert([
-      req.body.name,
+      req.body.firstname,
+      req.body.lastname,
       req.body.email,
       bcrypt.hashSync(req.body.password, 8)
   ],
   function (err) {
       if (err) return res.status(500).send("There was a problem registering the user.")
-      db.selectByEmail(req.body.email, (err,user) => {
-          if (err) return res.status(500).send("There was a problem getting user")
-          let token = jwt.sign({ id: user.id }, config.secret, {expiresIn: 86400 // expires in 24 hours
-          });
-          res.status(200).send({ auth: true, token: token, user: user });
-      }); 
+      res.status(200).send();
   }); 
 });
 
@@ -69,6 +65,15 @@ router.post('/login', (req, res) => {
       });
       res.status(200).send({ auth: true, token: token, user: user });
   });
+})
+
+router.post('/delete', (req, res) => {
+  if(req.body.isAdmin != 1) { return res.status(401).send('Unauthorized.') }
+  db.delete(req.body.email, (err, result) => {
+    if (err) return res.status(500).send('Error on the server.');
+    if (result.affectedRows == 0) return res.status(404).send('No user found.');
+    res.status(200).send();
+  })
 })
 
 app.use(router);

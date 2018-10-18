@@ -39,19 +39,15 @@ router.post('/register', function(req, res) {
 
 router.post('/register-admin', function(req, res) {
   db.insertAdmin([
-      req.body.name,
+      req.body.firstname,
+      req.body.lastname,
       req.body.email,
       bcrypt.hashSync(req.body.password, 8),
       1
   ],
   function (err) {
       if (err) return res.status(500).send("There was a problem registering the user.")
-      db.selectByEmail(req.body.email, (err,user) => {
-          if (err) return res.status(500).send("There was a problem getting user")
-          let token = jwt.sign({ id: user.id }, config.secret, { expiresIn: 86400 // expires in 24 hours
-          });
-          res.status(200).send({ auth: true, token: token, user: user });
-      }); 
+      res.status(200).send();
   }); 
 });
 

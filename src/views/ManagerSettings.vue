@@ -247,29 +247,13 @@
   <span class="help-block"></span>  
   </div>
 </div>
-<br>
-<br>
-<br>
-<br>
+<div class="control-group">
+            <label class="control-label" for="singlebutton"></label>
+            <div class="controls">
+                 <button id="singlebutton" name="singlebutton" class="btn btn-info">Submit</button>
+            </div>
+        </div> 
 
-<legend>Password Settings:</legend>
-
-		<div class="col-sm-4">
-		    
-		    <label>Current Password</label>
-		    <div class="form-group pass_show"> 
-                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Current Password"> 
-            </div> 
-		       <label>New Password</label>
-            <div class="form-group pass_show"> 
-                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="New Password"> 
-            </div> 
-		       <label>Confirm Password</label>
-            <div class="form-group pass_show"> 
-                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Confirm Password"> 
-            </div> 
-            
-		</div>  
 <br>
 <br>
 <br>
@@ -311,9 +295,102 @@
   <span class="help-block"></span>  
   </div>
 </div>
-<form action="" method="">
-    <input type="submit" name="submitbutton" value="Delete">
-    </form>
+<div class="control-group">
+  <label class="control-label" for="singlebutton"></label>
+  <div class="controls">
+    <button id="singlebutton" name="singlebutton" class="btn btn-info">Delete</button>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<legend>Password Settings:</legend>
+
+		<div class="col-sm-4">
+		    
+		    <label>Current Password</label>
+		    <div class="form-group pass_show"> 
+                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Current Password"> 
+            </div> 
+		       <label>New Password</label>
+            <div class="form-group pass_show"> 
+                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="New Password"> 
+            </div> 
+		       <label>Confirm Password</label>
+            <div class="form-group pass_show"> 
+                <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Confirm Password"> 
+            </div> 
+            
+		</div> 
+        <div class="control-group">
+            <label class="control-label" for="singlebutton"></label>
+            <div class="controls">
+                 <button id="singlebutton" name="singlebutton" class="btn btn-info">Update</button>
+            </div>
+        </div> 
+<legend> </legend>
+
+<div class ="box1">    
+            <!-- Rounded switch -->
+            <h2>MarketPlace </h2>
+            <label class="switch">
+            <input id="checkbox" name="checkbox" type="checkbox" v-model="checked"/>
+            <span class="slider round"></span>
+            </label>
+            
+        </div>
+
+<div class ="box2">    
+            <!-- Rounded switch -->
+            <h2>Trading </h2>
+            <label class="switch">
+            <input id="checkbox" name="checkbox" type="checkbox" v-model="checked"/>
+            <span class="slider round"></span>
+            </label>
+            
+        </div>
+
+<legend> Upload Schedule:</legend>        
+
+
+<div class="form-group">
+  <label class="col-md-1 control-label" for="displayname">Title:</label>  
+  <div class="col-md-4">
+  <input id="displayname" name="displayname" type="text" placeholder="file name: " class="form-control input-md" required="">
+  <span class="help-block"></span>  
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="form-group">
+  <label class="col-md-1 control-label" for="displayname">Description</label>  
+  <div class="col-md-4">
+  <input id="displayname" name="displayname" type="text" placeholder="  " class="form-control input-md" required="">
+  <span class="help-block"></span>  
+  </div>
+</div>
+<br>
+<br>
+<!-- File Button --> 
+<div class="control-group">
+  <label class="control-label" for="filebutton"></label>
+  <div class="controls">
+    <input id="filebutton" name="filebutton" class="input-file" type="file">
+  </div>
+</div>
+<br>
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label" for="singlebutton"></label>
+  <div class="controls">
+    <button id="singlebutton" name="singlebutton" class="btn btn-info">Upload</button>
+  </div>
+</div>
+
+
 
 <br/>
 </div>

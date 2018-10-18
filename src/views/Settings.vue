@@ -38,8 +38,7 @@
         <li> <details>
             <summary>Notification Settings</summary>
             <div class="settingContent">
-            <form action="/Settings.vue" method="get">
-
+            
               <input type="checkbox" name="mail" value="Mail"> Recieve Mail Notifications<br>
            
               <input type="checkbox" name="messages" value="messages"> Recieve Messages Notifications<br>
@@ -48,24 +47,45 @@
 
               <input type="checkbox" name="requests" value="Requests"> Recieve Requests Notifications<br>
 
-              <input type="submit" value="Save">
-              </form>
-
+              <button type="save">Save</button>
             </div>
           </details>  
           </li>
         <li> <details>
             <summary>Trade History</summary>
             <div class="settingContent">
-            <label for="">Current Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">New Password
-              <input type="text" name="" id=""><br>
-            </label>
-            <label for="">Confirm New Password
-              <input type="text" name="" id=""><br>
-            </label>
+            
+            <table style="width:100%">
+            <tr>
+              <th>My Shift</th>
+              <th>Their Shift</th> 
+              <th>Name of Person</th>
+              <th>Trade Date</th>
+            </tr>
+
+            <tr>
+              <td>Some shift</td>
+              <td>Some shift</td>
+              <td>Eddie</td>
+              <td>02/17/2018</td>
+            </tr>
+            <tr>
+              <td>Some shift</td>
+              <td>Some shift</td>
+              <td>Johny</td>
+              <td>01/2/2018</td>
+            </tr>
+            <tr>
+              <td>Some shift</td>
+              <td>Some shift</td>
+              <td>Nissan</td>
+              <td>09/4/2017</td>
+            </tr>
+
+          </table>
+
+          <button type="clear">Clear Trade History</button>
+
             </div>
           </details>  
           </li>

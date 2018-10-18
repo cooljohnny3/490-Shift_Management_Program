@@ -11,10 +11,13 @@
           </div>
           <div class="buttons">
             <button type="submit" v-on:click="handleSubmit">Log in</button>
+            <!--
             <router-link to="/forgot">
               <button>Forgot Password</button>
             </router-link>
+            -->
           </div>
+          <p v-show="failedLogin">Login Failed</p>
         </form>
 		</div>
 	</div>
@@ -27,7 +30,8 @@ export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      failedLogin: false
     };
   },
 
@@ -52,7 +56,8 @@ export default {
               }
             }
           })
-          .catch(function(error) {
+          .catch((error) => {
+            this.failedLogin = true;
             console.error(error.response);
           });
       }

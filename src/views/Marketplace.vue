@@ -71,18 +71,6 @@
 </script>
 
 <style scoped>
-	#listingtable
-	{
-		position: absolute;
-		left: 100px;
-		top: 300px;
-		border-collapse: collapse;
-
-		font-family: Roboto;
-
-		opacity: 0.8;
-	}
-
 	#listingtable td, #listingtable th
 	{
 		border: 1px solid black;

@@ -56,12 +56,12 @@
 <div class="form-group">
     <label class="col-md-4 control-label" for="publickey">Employee Key</label>
     <div class="col-md-4">
-	    <div class="input-group input-file" name="publickey">
-    	    <input type="text" class="form-control" placeholder='Enter ID' />			
-            <span class="input-group-btn">
-            	<button class="btn btn-default btn-choose" type="button">Submit</button>
-    	    </span>
-	    </div>
+      <div class="input-group input-file" name="publickey">
+          <input type="text" class="form-control" placeholder='Enter ID' />			
+          <span class="input-group-btn">
+          <button class="btn btn-default btn-choose" type="button">Submit</button>
+          </span>
+      </div>
 	</div>
 </div>
 <br/>
@@ -308,16 +308,15 @@
 <legend>Password Settings:</legend>
 
 		<div class="col-sm-4">
-		    
-		    <label>Current Password</label>
-		    <div class="form-group pass_show"> 
+        <label>Current Password</label>
+          <div class="form-group pass_show"> 
                 <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Current Password"> 
             </div> 
-		       <label>New Password</label>
+          <label>New Password</label>
             <div class="form-group pass_show"> 
                 <input type="password" value="John.doe@mail.com" class="form-control" placeholder="New Password"> 
             </div> 
-		       <label>Confirm Password</label>
+          <label>Confirm Password</label>
             <div class="form-group pass_show"> 
                 <input type="password" value="John.doe@mail.com" class="form-control" placeholder="Confirm Password"> 
             </div> 

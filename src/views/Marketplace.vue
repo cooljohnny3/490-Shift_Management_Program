@@ -59,7 +59,7 @@
 		</tr>
 	</table>
 
-	<router-link to="marketplace/listing">
+	<router-link to="listing">
 		<button id="newlisting" class="button">New Listing</button>
 	</router-link>
 

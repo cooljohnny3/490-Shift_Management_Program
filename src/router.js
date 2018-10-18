@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
+import Listing from './views/Listing'
 import Marketplace from './views/Marketplace'
-import Offer from './views/Offer'
-import Request from './views/Request'
 import Notifications from './views/Notifications'
 import Settings from './views/Settings'
 import ManagerSettings from './views/ManagerSettings'
@@ -31,17 +30,9 @@ let router =  new Router({
       }
     },
     {
-      path: '/marketplace/offer',
-      name: 'offer',
-      component: Offer,
-      meta: { 
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/marketplace/request',
-      name: 'request',
-      component: Request,
+      path: '/listing',
+      name: 'listing',
+      component: Listing,
       meta: { 
         requiresAuth: true
       }

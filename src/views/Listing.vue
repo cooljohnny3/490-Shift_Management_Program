@@ -43,16 +43,12 @@
 <script>
 import MenuBar from "@/components/MenuBar";
 import Datepicker from 'vuejs-datepicker';
-import Offer from "@/components/Offer";
-import Request from "@/components/Request";
 
 
 export default {
   name: "Listing",
   components: {
     MenuBar,
-    Offer,
-    Request,
     Datepicker
   },
 

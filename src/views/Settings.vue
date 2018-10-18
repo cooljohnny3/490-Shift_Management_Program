@@ -8,13 +8,13 @@
           <details>
             <summary>Change Password</summary>
             <div class="settingContent">
-            <label for="">Current Password
+            <label for="">Current Password: 
               <input type="text" name="" id=""><br>
             </label>
-            <label for="">New Password
+            <label for="">New Password: 
               <input type="text" name="" id=""><br>
             </label>
-            <label for="">Confirm New Password
+            <label for="">Confirm New Password: 
               <input type="text" name="" id=""><br>
             </label>
             <button type="save">Save Changes</button><br>
@@ -39,13 +39,13 @@
             <summary>Notification Settings</summary>
             <div class="settingContent">
             
-              <input type="checkbox" name="mail" value="Mail"> Recieve Mail Notifications<br>
+              <input type="checkbox" name="mail" value="Mail"> Recieve Mail Notifications.<br>
            
-              <input type="checkbox" name="messages" value="messages"> Recieve Messages Notifications<br>
+              <input type="checkbox" name="messages" value="messages"> Recieve Messages Notifications.<br>
             
-              <input type="checkbox" name="offers" value="Offers"> Recieve Offers Notifications<br>
+              <input type="checkbox" name="offers" value="Offers"> Recieve Offers Notifications.<br>
 
-              <input type="checkbox" name="requests" value="Requests"> Recieve Requests Notifications<br>
+              <input type="checkbox" name="requests" value="Requests"> Recieve Requests Notifications.<br>
 
               <button type="save">Save</button><br>
             </div>
